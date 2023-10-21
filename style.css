@@ -41,55 +41,42 @@ nav a {
     font-size: 18px;
     display: block;
 }
-nav a:hover {
+
+nav a:hover, .subnav:hover .subnavButton{
     background-color: black;
     color: red;
 }  
   
-  .subnavButton {
+.subnavButton {
     font-size: 18px; 
     border: none;
-    /* outline: none; */
     color: black;
     padding: 10px 15px;
     background-color: rgb(240, 236, 222);
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
   } 
-  
-  .nav a:hover, .subnav:hover .subnavButton {
-    background-color: black;
-    color:red;
-  }
-  
-  /* Dropdown content (hidden by default) */
-  .subnavContent {
+
+.subnavContent {
     display: none;
-    position: absolute;
+    position:absolute;
     background-color: black;
-    color:red;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
   }
-  
-  /* Links inside the dropdown  */
-  .subnavContent a {
-    float: none;
+
+
+.subnavContent a {
     color:red;
-    /* padding: 12px 16px; */
-    text-decoration: none;
-    display: block;
     text-align: left;
-  }
-  
-  /* Add a grey background color to dropdown links on hover */
-  .subnavContent a:hover {
-    background-color: black;
+  } 
+
+
+.subnavContent a:hover {
     color:white;
   }
-  
-  .subnav:hover .subnavContent {
+
+.subnav:hover .subnavContent {
     display: block;
   }
 
