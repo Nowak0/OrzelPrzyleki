@@ -1,31 +1,35 @@
-const x = document.getElementById("demo");
+const x = document.getElementById("getLocation");
 
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } 
-  else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+        showError(x);
+      } 
+      else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+        document.getElementById("getLocation").style.display="none";
+      }
+    } 
 
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude +
-  "<br>Longitude: " + position.coords.longitude;
-}
-function showError(error) {
-    switch(error.code) {
-      case error.PERMISSION_DENIED:
-        x.innerHTML = "User denied the request for Geolocation."
-        break;
-      case error.POSITION_UNAVAILABLE:
-        x.innerHTML = "Location information is unavailable."
-        break;
-      case error.TIMEOUT:
-        x.innerHTML = "The request to get user location timed out."
-        break;
-      case error.UNKNOWN_ERROR:
-        x.innerHTML = "An unknown error occurred."
-        break;
+    function showPosition(position) {
+      x.innerHTML = "Twoja szerokość geograficzna: " + position.coords.latitude +
+        "<br>Twoja długość geograficzna: " + position.coords.longitude;
     }
-  }
+    function showError(error) {
+        switch(error.code) {
+          case error.PERMISSION_DENIED:
+            x.innerHTML = "Polecenie o otrzymanie lokalizacji zostało odrzucone."
+            break;
+          case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Informacja o lokalizacji niedostępna."
+           break;
+          case error.TIMEOUT:
+            x.innerHTML = "Polecenie przestało być ważne."
+            break;
+          case error.UNKNOWN_ERROR:
+            x.innerHTML = "Wystąpił nieznany problem."
+           break;
+          default:
+            break;
+        }
+    }
