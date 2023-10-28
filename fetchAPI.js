@@ -1,0 +1,5 @@
+const x=document.getElementById("printFetch")
+fetch('test.txt')
+    .then(response => response.text())
+    .then(data => x.innerHTML=data)
+    .catch(error => console.log('ERROR'))
