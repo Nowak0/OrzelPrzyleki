@@ -85,6 +85,10 @@ nav a:hover, .subnav:hover .subnavButton{
     font-size:2vw;
 }
 
+table {
+    text-align: center;
+}
+
 #contactInfo {
     font-size:2vw;
 }
