@@ -80,6 +80,11 @@ nav a:hover, .subnav:hover .subnavButton{
     display: block;
   }
 
+#JSnotworking {
+    color:red;
+    font-size:2vw;
+}
+
 #contactInfo {
     font-size:2vw;
 }

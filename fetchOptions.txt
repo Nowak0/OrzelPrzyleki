@@ -6,45 +6,74 @@ fetch('test.txt')
 
 
 
+const url = 'http://worldtimeapi.org/api/timezone/America/New_York'
+printFetch=document.getElementById("printFetch")
 
-const dataToUpdate= {
-    id:21,
-    title:"The MVP",
-    body:"This is the best player in the league",
-    author:"Joel Embiid"
+async function getData() {
+    const response = await fetch(url)
+    const data = await response.json()
+    console.log(data)
 }
-const mystring = JSON.stringify(dataToUpdate)
-const x=document.getElementById("printFetch")
-fetch('https://reqres.in/api/users', {
-    method:'POST',
+
+getData();
+
+
+
+
+
+//'https://reqres.in/api/users'
+
+const printItems=document.getElementById('printFetch')
+const url = 'http://worldtimeapi.org/api/timezone/Poland'
+/*
+const url="https//api.spotify.com/v1/artists/Ok17h@D3J5VfsdmQ1iZtE8"
+printFetch=document.getElementById("printFetch")
+const request = new Request(url, {
     headers: {
-        'Content-Type': 'application/json'
-    },
-    body: mystring
+        'Authorization': 'Bearer 123'
+    }
 })
-    .then(response => {return response.text()})
-    .then(data => x.innerHTML=data)
-    .catch(error => console.log('ERROR'))
-
-
-
-//fetch('https://reqres.in/api/users')
-
-const dataToUpdate= {
-    id:21,
-    title:"The MVP",
-    team:"Philadelphia 76ers",
-    author:"Joel Embiid"
+*/
+async function getData() {
+    try {
+        const response = await fetch(url)
+        const data = await response.json()
+        if(response.status === 200) {
+            const result=JSON.stringify(data)
+            printItems.innerHTML=result
+        }
+        else {
+            printItems.innerHTML='Server Error ' + data.error.message
+        }
+    }
+    catch(error) {
+        printItems.innerHTML='Fetch Error ' + error.message
+    }
 }
-const mystring = JSON.stringify(dataToUpdate)
-const x=document.getElementById("printFetch")
-fetch('http://192.168.56.10:8080/', {
-    method:'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: mystring
-})
-    .then(response => {return response.text()})
-    .then(data => x.innerHTML=data)
-    .catch(error => console.log('ERROR'))
+
+getData()
+
+
+
+
+const printItems=document.getElementById('printFetch')
+const source = 'test.txt'
+const disableMessage = document.getElementById('JSnotworking')
+async function getData() {
+    disableMessage.style.display='none'
+    try {
+        const response = await fetch(source)
+        const data = await response.text()
+        if(response.status === 200) {
+            printItems.innerHTML=data
+        }
+        else {
+            printItems.innerHTML='Server Error ' + data.error.message
+        }
+    }
+    catch(error) {
+        printItems.innerHTML='Fetch Error ' + error.message
+    }
+}
+
+getData()
