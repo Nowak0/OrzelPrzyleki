@@ -1,9 +1,7 @@
 const standings = document.getElementById('standings');
-const source = 'test2.html';
-const disableMessage = document.getElementById('JSnotworking');
+const source = 'standings.html';
 
 async function getStandings() {
-    disableMessage.style.display = 'none';
     try {
         const response = await fetch(source);
         const data = await response.text();

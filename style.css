@@ -85,8 +85,16 @@ nav a:hover, .subnav:hover .subnavButton{
     font-size:2vw;
 }
 
+#standings {
+    display: none;
+    text-align:center;
+    padding-bottom:2vw;
+}
+
 table {
-    text-align: center;
+    width: auto;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 #contactInfo {
