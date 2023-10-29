@@ -3,6 +3,7 @@ body {
     text-align:center;
     margin:auto;
     font-family: Arial, Helvetica, sans-serif;
+    width:100%;
 }
 header {
     background-color:  rgb(240, 236, 222);
@@ -17,8 +18,10 @@ header {
 #logo a,
 #logo img {
     /*display: block;*/
-    height:90px;
-    width: 130px;
+    /* height:90px;
+    width: 130px; */
+    height:5vw;
+    width:6vw;
 }
 
 nav {
@@ -92,9 +95,26 @@ nav a:hover, .subnav:hover .subnavButton{
 }
 
 table {
+    font-size: 80%;
     width: auto;
     margin-left:auto;
     margin-right:auto;
+    margin-top:2vw;
+    border: 3px solid black;
+}
+
+th, td {
+    border: 1px solid rgb(44, 43, 43);
+    padding:0.4vw;
+}
+
+td:first-child {
+    color:green;
+    width:20%;
+}
+
+#Orzeł_Przyłęki td:first-child {
+    color:red;
 }
 
 #contactInfo {
@@ -112,13 +132,19 @@ form input {
 footer {
     position: static;
     bottom:0;
-    width:100vw;
+    width:100%;
     background-color: #201f8a;
     color: whitesmoke;
     border-top: 2px solid rgba(157, 157, 157, 0.67);
-    padding: 22px 15px;
+    padding-top: 22px;
+    padding-bottom: 22px;
     text-align: center;
 }
 footer p {
     margin:0;
+}
+
+#goUpButton {
+
+   
 }
