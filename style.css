@@ -83,6 +83,12 @@ nav a:hover, .subnav:hover .subnavButton{
     display: block;
   }
 
+
+.main {
+    margin-bottom: 2vw;
+}
+
+
 #JSnotworking {
     color:red;
     font-size:2vw;
@@ -139,6 +145,7 @@ footer {
     padding-top: 22px;
     padding-bottom: 22px;
     text-align: center;
+    margin-top:2vw;
 }
 footer p {
     margin:0;

@@ -46,9 +46,9 @@
           <label for="email">Email: </label>
           <input type="text" name="email" id="email" required><br>
           <label for="seniorTeam">Drużyna seniorów </label>
-          <input type="radio" name="seniorTeam" id="seniorTeam" checked>
+          <input type="radio" name="pickTeam" id="seniorTeam" checked>
           <label for="juniorTeam">Drużyna juniorów </label>
-          <input type="radio" name="juniorTeam" id="juniorTeam"><br>
+          <input type="radio" name="pickTeam" id="juniorTeam"><br>
           <select name="topic" id="topic">
             <option value="0">Wybierz temat wiadomości</option>
             <option value="colab">Współpraca</option>
@@ -68,9 +68,11 @@
             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" 
         referrerpolicy="no-referrer-when-downgrade"></iframe></p>
     </div>
-    <footer>
-        <p>Copyright &copy; 2023 - Jakub Nowak</p>
+    <footer onclick=changeFooter()>
+      <p>Copyright &copy; 2023 - Jakub Nowak</p>
+       <!---<button id="goUpButton"><a href="">Go UP</a></button> --->
     </footer>
     <script src="geoAPI.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

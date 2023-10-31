@@ -7,7 +7,7 @@ var countClicks = 0;
 function changeFooter() {
     countClicks+=1;
     const getFooter = document.getElementById('footer');
-    const getFooterText = document.getElementById('footerText')
+    const getFooterText = document.getElementById('footerText');
     if (countClicks%2==1) {
     getFooter.style.backgroundColor='darkred';
     getFooter.style.color='black';
@@ -19,3 +19,13 @@ function changeFooter() {
         getFooterText.innerHTML = "Copyright &copy; 2023 - Jakub Nowak";
     }
 };
+
+function addElement() {
+    const footer = document.getElementById('footer')
+    const newDiv = document.createElement('div');
+    const divContent = document.createTextNode("Siemano, narazie dodam tu tylko text");
+    newDiv.appendChild(divContent);
+    document.body.insertBefore(newDiv,footer);
+}
+
+addElement();
