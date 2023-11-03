@@ -88,6 +88,10 @@ nav a:hover, .subnav:hover .subnavButton{
     margin-bottom: 2vw;
 }
 
+.slider {
+    color: red;
+}
+
 
 #JSnotworking {
     color:red;

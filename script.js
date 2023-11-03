@@ -18,14 +18,16 @@ function changeFooter() {
         getFooter.style.color='white';
         getFooterText.innerHTML = "Copyright &copy; 2023 - Jakub Nowak";
     }
-};
-
-function addElement() {
-    const footer = document.getElementById('footer')
-    const newDiv = document.createElement('div');
-    const divContent = document.createTextNode("Siemano, narazie dodam tu tylko text");
-    newDiv.appendChild(divContent);
-    document.body.insertBefore(newDiv,footer);
 }
 
-addElement();
+function addSlider() {
+    const divFetch = document.getElementById('publishFetch');
+    const divSlider = document.createElement('div');
+    const standings = document.getElementById('standings');
+    divSlider.classList.add('slider');
+    const divContent = document.createTextNode("Siemano, narazie dodam tu tylko text");
+    divSlider.appendChild(divContent);
+    divFetch.insertBefore(divSlider,standings);
+}
+
+addSlider();
