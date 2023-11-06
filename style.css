@@ -11,17 +11,17 @@ header {
     top:0;
     display:flex;
     align-items: center;
-    padding: 15px;
+    padding: 5px;
+    padding-right:10px;
     justify-content: space-between;
 }
 
-#logo a,
-#logo img {
-    /*display: block;*/
+.logo a,
+.logo img {
     /* height:90px;
     width: 130px; */
-    height:5vw;
-    width:6vw;
+    height:10vw;
+    width:13vw;
 }
 
 nav {
@@ -89,9 +89,23 @@ nav a:hover, .subnav:hover .subnavButton{
 }
 
 .slider {
-    color: red;
+    position: relative;
 }
 
+.sliderImg {
+    width:100%;
+    height:auto;
+    object-fit: cover;
+}
+
+.sliderText { 
+    color:white;
+    position: absolute;
+    width:100%;
+    top:0;
+    text-align: center;
+    font-size: 3vw;
+}
 
 #JSnotworking {
     color:red;

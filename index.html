@@ -10,9 +10,12 @@
   </head>
   <body>
     <header>
-      <div id="logo">
+      <div class="logo">
         <a href="#">
-        <img src="pics/76ers_logo.png" alt="">
+          <img
+            src="pics/png_logo.png"
+            alt="logo Orzeł Przyłęki"
+            srcset="pics/svg_logo.svg" />
         </a>
       </div>
       <nav>
@@ -22,7 +25,7 @@
           </li>
           <li>
             <div class="subnav">
-              <button class="subnavButton">Druzyna <i class="fa fa-caret-down"></i></button>
+              <button class="subnavButton">Druzyna</button>
               <div class="subnavContent">
                 <a href="zawodnicy.html">Zawodnicy</a>
                 <a href="#">Galeria zdjęć</a>
@@ -36,10 +39,7 @@
       </nav>
     </header>
     <div class="main" id="main">
-      <p>WAI - work in progress</p>
-      <br>
-      <div id="id1"></div>
-      <div class='publishFetch' id='publishFetch'>
+      <div id='publishFetch'>
         <p id="standings"> 
           <button onclick=getStandings()>Pobierz aktualną tabelę wyników</button>
         </p>
