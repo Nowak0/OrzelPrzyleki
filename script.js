@@ -25,18 +25,29 @@ function addSlider() {
     const divFetch = document.getElementById('publishFetch');
     const divMain = document.getElementById('main');
     const divSlider = document.createElement('div');
-    divSlider.classList.add('slider');
     const image = document.createElement('img');
-    image.classList.add('sliderImg');
+    const createText = document.createElement('p');
+    const addText=document.createTextNode('Joel Embiid MVP');
+    const goRight = document.createElement('button');
+    const goLeft = document.createElement('button');
+    goLeft.setAttribute('id','goLeft');
+    goRight.setAttribute('id','goRight');
+    goLeft.textContent = '&#10094;'
+    goRight.textContent='wprawo';
+    goLeft.classList.add('goLeft');
+    goRight.classList.add('goRight');
+    divSlider.classList.add('slider');
+    createText.classList.add('sliderText');
+    image.setAttribute('id','sliderImg')
     image.setAttribute('src', 'pics/rozgrzewka.jpeg');
     image.setAttribute('alt', 'zdjecie naglowkowe 1');
-    image.addEventListener('click',changeSlider,false);
-    const createText = document.createElement('p');
-    createText.classList.add('sliderText');
-    const addText=document.createTextNode('haaaalohalo');
+    goLeft.addEventListener('click',changeSlider,false);
+    goRight.addEventListener('click',changeSlider,false);
     createText.appendChild(addText);
     divSlider.appendChild(image);
-    //divSlider.appendChild(createText);
+    divSlider.appendChild(createText);
+    divSlider.appendChild(goLeft);
+    divSlider.appendChild(goRight);
     divMain.insertBefore(divSlider, divFetch);
 }
 
