@@ -33,10 +33,10 @@ function addSlider() {
     image.addEventListener('click',changeSlider,false);
     const createText = document.createElement('p');
     createText.classList.add('sliderText');
-    const addText=document.createTextNode('haaaalo');
+    const addText=document.createTextNode('haaaalohalo');
     createText.appendChild(addText);
     divSlider.appendChild(image);
-    divSlider.appendChild(createText);
+    //divSlider.appendChild(createText);
     divMain.insertBefore(divSlider, divFetch);
 }
 
