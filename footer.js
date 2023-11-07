@@ -1,9 +1,9 @@
 var countClicksFooter = 0;
 
-function changeFooter() {
+function changeFooter(idFooter,idFooterParagraph) {
     countClicksFooter += 1;
-    const getFooter = document.getElementById('footer');
-    const getFooterText = document.getElementById('footerText');
+    const getFooter = document.getElementById(idFooter);
+    const getFooterText = document.getElementById(idFooterParagraph);
     if (countClicksFooter % 2 == 1) {
         getFooter.style.backgroundColor = 'darkred';
         getFooter.style.color = 'black';

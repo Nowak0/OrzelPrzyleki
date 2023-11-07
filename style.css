@@ -16,14 +16,13 @@ header {
     padding: 5px;
     padding-right:10px;
     justify-content: space-between;
+    z-index: 10;
 }
 
 .logo a,
 .logo img {
-    /* height:90px;
-    width: 130px; */
-    height:10vw;
-    width:13vw;
+    height:6vw;
+    width:9vw;
 }
 
 nav {
@@ -112,13 +111,13 @@ nav a:hover, .subnav:hover .subnavButton{
 #goRight, #goLeft {
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 40%;
     width: auto;
     margin-top: -22px;
     padding: 16px;
-    color: white;
+    color: black;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.5vw;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
@@ -166,6 +165,27 @@ td:first-child {
 
 #Orzeł_Przyłęki td:first-child {
     color:red;
+}
+
+#goToTop {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 1vw; /* Place the button at the bottom of the page */
+    right: 1vw; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: red; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 0.5vw; /* Some padding */
+    border-radius: 0.5vw; /* Rounded corners */
+    font-size: 1.5vw; /* Increase font size */
+    text-decoration: none;
+}
+
+#goToTop:hover {
+    background-color: darkred;
 }
 
 #contactInfo {

@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Orzeł Przyłęki</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
     <header>
@@ -25,7 +26,7 @@
           </li>
           <li>
             <div class="subnav">
-              <button class="subnavButton">Druzyna</button>
+              <button class="subnavButton">Druzyna &#8595;</button>
               <div class="subnavContent">
                 <a href="zawodnicy.html">Zawodnicy</a>
                 <a href="#">Galeria zdjęć</a>
@@ -50,8 +51,10 @@
       <img src="pics/jordan2.jpg" alt="">
       <br>
       <img src="pics/jordan1.webp" alt="">
+      <br>
+      <a id="goToTop" href="#main">&#129029;</a>
     </div>
-    <footer id="footer" onclick=changeFooter()>
+    <footer id="mainFooter" onclick='changeFooter("mainFooter","mainFooterText")'>
       <p id="footerText">Copyright &copy; 2023 - Jakub Nowak</p>
        <!---<button id="goUpButton"><a href="">Go UP</a></button> --->
     </footer>
