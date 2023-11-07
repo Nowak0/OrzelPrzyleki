@@ -1,25 +1,8 @@
 const disableMessage = document.getElementById('JSnotworking');
 const setStandingsVisibility = document.getElementById('standings');
 disableMessage.style.display = 'none';
-standings.style.display = 'block';
-var countClicksFooter = 0;
+setStandingsVisibility.style.display = 'block';
 var countClicksSlider = 1;
-
-function changeFooter() {
-    countClicksFooter += 1;
-    const getFooter = document.getElementById('footer');
-    const getFooterText = document.getElementById('footerText');
-    if (countClicksFooter % 2 == 1) {
-        getFooter.style.backgroundColor = 'darkred';
-        getFooter.style.color = 'black';
-        getFooterText.innerHTML = "Copyright &copy; 2023 - Jakub Nowak s197860";
-    }
-    else {
-        getFooter.style.backgroundColor = 'navy';
-        getFooter.style.color = 'white';
-        getFooterText.innerHTML = "Copyright &copy; 2023 - Jakub Nowak";
-    }
-}
 
 function addSlider() {
     const divFetch = document.getElementById('publishFetch');
@@ -27,7 +10,7 @@ function addSlider() {
     const divSlider = document.createElement('div');
     const image = document.createElement('img');
     const createText = document.createElement('p');
-    const addText=document.createTextNode('Joel Embiid MVP');
+    const addText=document.createTextNode('Dzień Dobry');
     const goRight = document.createElement('button');
     const goLeft = document.createElement('button');
     goLeft.textContent = '&#10094;'

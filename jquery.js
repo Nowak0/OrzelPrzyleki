@@ -35,20 +35,15 @@ $(document).ready(function() {
         })
         */
         .autocomplete({
-            /*
             source: function( request, response ) {
                         var mail = extractLast(request.term);
                         if(mail.length<1){return;}
-                        //var matcher = new RegExp( "^" + mail, "i" );
-                        /*
+                        var matcher = new RegExp( "^" + mail, "i" );
                         response( $.grep( availableTags, function( item ){
                             return matcher.test( item );
                         }));
-                        */
-                       /*
                        response(availableTags);
              },
-            */
             source: function (request, response) {
                 var mail = extractLast(request.term);
                 if(mail.length<1) {
