@@ -30,14 +30,14 @@ function addSlider() {
     const addText=document.createTextNode('Joel Embiid MVP');
     const goRight = document.createElement('button');
     const goLeft = document.createElement('button');
-    goLeft.setAttribute('id','goLeft');
-    goRight.setAttribute('id','goRight');
     goLeft.textContent = '&#10094;'
     goRight.textContent='wprawo';
     goLeft.classList.add('goLeft');
     goRight.classList.add('goRight');
     divSlider.classList.add('slider');
     createText.classList.add('sliderText');
+    goLeft.setAttribute('id','goLeft');
+    goRight.setAttribute('id','goRight');
     image.setAttribute('id','sliderImg')
     image.setAttribute('src', 'pics/rozgrzewka.jpeg');
     image.setAttribute('alt', 'zdjecie naglowkowe 1');
