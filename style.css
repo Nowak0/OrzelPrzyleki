@@ -4,7 +4,7 @@ body {
     background-color: whitesmoke;
     text-align:center;
     margin:auto;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Barlow Semi Condensed', sans-serif;
     width:100%;
 }
 header {
@@ -57,7 +57,7 @@ nav a:hover, .subnav:hover .subnavButton{
     color: black;
     padding: 10px 15px;
     background-color: rgb(240, 236, 222);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Barlow Semi Condensed', sans-serif;
     margin: 0;
   } 
 
@@ -93,10 +93,16 @@ nav a:hover, .subnav:hover .subnavButton{
     position: relative;
 }
 
+.sliderImg {
+    animation-name: fade;
+    animation-duration:1.5s;
+}
+
 #sliderImg {
     width:100%;
     height:auto;
     object-fit: cover;
+    opacity:80%;
 }
 
 .sliderText { 
@@ -105,7 +111,8 @@ nav a:hover, .subnav:hover .subnavButton{
     width:100%;
     top:0;
     text-align: center;
-    font-size: 3vw;
+    font-size: 5vw;
+    opacity:100%;
 }
 
 #goRight, #goLeft {
@@ -214,4 +221,19 @@ footer {
 }
 footer p {
     margin:0;
+}
+
+@keyframes fade {
+    from {
+        opacity: 20%;
+    }
+    to {
+        opacity:80%;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    body {
+        font-size:11px;
+    }
 }

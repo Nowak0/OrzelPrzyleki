@@ -3,6 +3,11 @@ const setStandingsVisibility = document.getElementById('standings');
 disableMessage.style.display = 'none';
 setStandingsVisibility.style.display = 'block';
 var countClicksSlider = 1;
+var timeout;
+
+function startTimeout() {
+    timeout=window.setTimeout(changeSlider,3000);
+}
 
 function addSlider() {
     const divFetch = document.getElementById('publishFetch');
@@ -10,7 +15,7 @@ function addSlider() {
     const divSlider = document.createElement('div');
     const image = document.createElement('img');
     const createText = document.createElement('p');
-    const addText=document.createTextNode('Dzień Dobry');
+    const addText=document.createTextNode('DZIEŃ DOBRY');
     const goRight = document.createElement('button');
     const goLeft = document.createElement('button');
     goLeft.innerHTML='&#129028;';
@@ -21,6 +26,7 @@ function addSlider() {
     //goRight.classList.add('goRight');
     divSlider.classList.add('slider');
     createText.classList.add('sliderText');
+    image.classList.add('sliderImg');
     createText.setAttribute('id','sliderText');
     goLeft.setAttribute('id','goLeft');
     goRight.setAttribute('id','goRight');
@@ -35,25 +41,35 @@ function addSlider() {
     divSlider.appendChild(goLeft);
     divSlider.appendChild(goRight);
     divMain.insertBefore(divSlider, divFetch);
+    startTimeout();
 }
-//'<i class="fa fa-trash-o" aria-hidden="true"></i>'
+
 addSlider();
 
 function changeSlider() {
     countClicksSlider += 1;
     const image = document.getElementById('sliderImg');
+    const goLeft = document.getElementById('goLeft');
+    const goRight = document.getElementById('goRight');
+    clearTimeout(timeout);
     if (countClicksSlider == 1) {
         image.setAttribute('src', 'pics/rozgrzewka.jpeg');
         image.setAttribute('alt', 'zdjecie naglowkowe 1');
     }
     if (countClicksSlider == 2) {
-        image.setAttribute('src', 'pics/objecia_po_meczu.jpeg');
+        image.setAttribute('src', 'pics/juniorzySlider.jpg');
         image.setAttribute('alt', 'zdjecie naglowkowe 2');
+    }
+    if (countClicksSlider == 3) {
+        image.setAttribute('src','pics/objecia_po_meczu.jpeg');
+        image.setAttribute('alt','zdjecie naglowkowe 3');
         countClicksSlider = 0;
     }
+    startTimeout();
 }
 
 const goToTopButton = document.getElementById('goToTop');
+
 window.onscroll = function() {
     scrollFunction();
 }
@@ -67,30 +83,12 @@ function scrollFunction() {
     }
 }
 
-function goToTopFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
-
 $(document).ready(function(){
-    // Add smooth scrolling to all links
-    $("#goToTop").on('click', function(event) {
-  
-      // Make sure this.hash has a value before overriding default behavior
-      var action=this.hash
-
-      if (action !== "") {
-        // Prevent default anchor click behavior
-        //event.preventDefault();
-  
-        // Store hash
-        //var hash = this.hash;
-  
-        // Using jQuery's animate() method to add smooth page scroll
-        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-        $('html, body').animate({
-          scrollTop: $(action).offset().top
-        }, 800);
-      } // End if
+    $("a").on('click', function() {
+        if(this.hash!=='') {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 800);
+        }
     });
   });

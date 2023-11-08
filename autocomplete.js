@@ -1,14 +1,4 @@
 $(document).ready(function() {
-    var countClicks=0;
-    $("input").focus(function() {
-        $(this).css("background-color", "navy");
-        $(this).css("color", "white");
-    });
-    $("input").blur(function() {
-        $(this).css("background-color", "whitesmoke");
-        $(this).css("color", "black");
-    });
-    $("#todayDate").datepicker();
     var availableTags = [
         "gmail.com",
         "wp.pl",
@@ -16,25 +6,26 @@ $(document).ready(function() {
         "interia.pl",
         "yahoo.com"
       ];
-    function extractLast( userInput ) {
-        if (userInput.indexOf("@")!=-1){
-            var getEmail=userInput.split("@");
-            return getEmail[getEmail.length-1];
+      function extractLast( val ) {
+        if (val.indexOf("@")!=-1){
+            var tmp=val.split("@");
+            console.log(tmp[tmp.length-1]);
+            return tmp[tmp.length-1];
         }
+        console.log("returning empty");
         return "";
     }
 
     $( "#email" )
         // don't navigate away from the field on tab when selecting an item
-        /*
         .bind( "keydown", function( event ) {
             if ( event.keyCode === $.ui.keyCode.TAB &&
                     $( this ).data( "autocomplete" ).menu.active ) {
                 event.preventDefault();
             }
         })
-        */
         .autocomplete({
+            minLength: 1,
             source: function( request, response ) {
                         var mail = extractLast(request.term);
                         if(mail.length<1){return;}
@@ -42,15 +33,7 @@ $(document).ready(function() {
                         response( $.grep( availableTags, function( item ){
                             return matcher.test( item );
                         }));
-                       response(availableTags);
              },
-            source: function (request, response) {
-                var mail = extractLast(request.term);
-                if(mail.length<1) {
-                    return;
-                }
-                response(availableTags);
-            },
             focus: function() {
                 // prevent value inserted on focus
                 return false;
@@ -62,26 +45,37 @@ $(document).ready(function() {
                 terms.pop();
                 // add the selected item
                 terms.push( ml+"@"+ui.item.value );
+                // add placeholder to get the comma-and-space at the end
+                terms.push( "" );
                 this.value = terms.join( "" );
                 return false;
             }
         });
-    $("#infoStadium").dialog({
-        autoOpen: false,
-        modal: true,
-        show: {
-            effect: "fade",
-            duration: 1000
-        },
-        hide: {
-            effect: "blind",
-            duration: 500
-        }
-    });
-    $("#stadium").mouseenter(function(){
-        countClicks+=1;
-        if(countClicks<=1) {
-        $("#infoStadium").dialog("open");
-        }
-    });
 });
+
+/*
+$(document).ready(function(){
+    // Add smooth scrolling to all links
+    $("#goToTop").on('click', function(event) {
+  
+      // Make sure this.hash has a value before overriding default behavior
+      var action=this.hash
+      $('html, body').animate({
+        scrollTop: 0
+      }, 800);
+      if (action !== "") {
+        // Prevent default anchor click behavior
+        //event.preventDefault();
+  
+        // Store hash
+        //var hash = this.hash;
+  
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+       
+      } // End if
+    });
+  });
+  //scrollTop: $(action).offset().top
+
+  */

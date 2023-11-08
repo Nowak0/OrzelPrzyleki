@@ -6,8 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Kontakt</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   </head>
   <body>
@@ -52,9 +55,9 @@
           <label for="email">Email: </label>
           <input type="text" name="email" id="email" required><br>
           <label for="seniorTeam">Drużyna seniorów </label>
-          <input type="radio" name="pickTeam" id="seniorTeam" checked>
+          <input type="radio" name="pickTeam" value="seniorTeam" id="seniorTeam" checked>
           <label for="juniorTeam">Drużyna juniorów </label>
-          <input type="radio" name="pickTeam" id="juniorTeam"><br>
+          <input type="radio" name="pickTeam" value="juniorTeam" id="juniorTeam"><br>
           <select name="topic" id="topic">
             <option value="0">Wybierz temat wiadomości</option>
             <option value="colab">Współpraca</option>
@@ -74,12 +77,11 @@
             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" 
         referrerpolicy="no-referrer-when-downgrade"></iframe></p>
     </div>"
-    <footer id="contactFooter" onclick='changeFooter("contactFooter","contactFooterText")'>
-      <p id="contactFooterText">Copyright &copy; 2023 - Jakub Nowak</p>
+    <footer>
+      <p>Copyright &copy; 2023 - Jakub Nowak</p>
        <!---<button id="goUpButton"><a href="">Go UP</a></button> --->
     </footer>
-    <script src="jquery.js"></script>
+    <script src="jqueryForContact.js"></script>
     <script src="geoAPI.js"></script>
-    <script src="footer.js"></script>
   </body>
 </html>
