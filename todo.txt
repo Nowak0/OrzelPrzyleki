@@ -1,7 +1,6 @@
 slider:
 - add and change text;
 - improve visual aspects - css;
-- crop images (so that they fit full display);
 
 main:
 - add text for main content;
@@ -10,5 +9,6 @@ main:
 players site:
 - photos
 - names
+- text
 
 glow animation

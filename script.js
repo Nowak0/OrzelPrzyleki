@@ -32,10 +32,18 @@ function addSlider() {
     goLeft.setAttribute('id','goLeft');
     goRight.setAttribute('id','goRight');
     image.setAttribute('id','sliderImg')
-    image.setAttribute('src', 'pics/rozgrzewka.jpeg');
+    image.setAttribute('src', 'pics/rozgrzewkaSlider.jpeg');
     image.setAttribute('alt', 'zdjecie naglowkowe 1');
-    goLeft.addEventListener('click',changeSlider,false);
-    goRight.addEventListener('click',changeSlider,false);
+    goLeft.onclick = function() {
+        if(countClicksSlider>=2) {countClicksSlider-=2;}
+        else if(countClicksSlider>3) {countClicksSlider=0;}
+        else {countClicksSlider+=1;}
+        changeSlider();
+    }
+    goRight.onclick = function() {
+        changeSlider();
+    }
+
     createText.appendChild(addText);
     divSlider.appendChild(image);
     divSlider.appendChild(createText);
@@ -48,14 +56,14 @@ function addSlider() {
 addSlider();
 
 function changeSlider() {
-    countClicksSlider += 1;
+    countClicksSlider+=1;
     const image = document.getElementById('sliderImg');
     const goLeft = document.getElementById('goLeft');
     const goRight = document.getElementById('goRight');
     clearTimeout(timeout);
     resetAnimation();
     if (countClicksSlider == 1) {
-        image.setAttribute('src', 'pics/rozgrzewka.jpeg');
+        image.setAttribute('src', 'pics/rozgrzewkaSlider.jpeg');
         image.setAttribute('alt', 'zdjecie naglowkowe 1');
     }
     if (countClicksSlider == 2) {
@@ -63,11 +71,10 @@ function changeSlider() {
         image.setAttribute('alt', 'zdjecie naglowkowe 2');
     }
     if (countClicksSlider == 3) {
-        image.setAttribute('src','pics/objecia_po_meczu.jpeg');
+        image.setAttribute('src','pics/wsparcie_slider.jpg');
         image.setAttribute('alt','zdjecie naglowkowe 3');
         countClicksSlider = 0;
     }
-    $(image).fadeIn();
     startTimeout();
 }
 

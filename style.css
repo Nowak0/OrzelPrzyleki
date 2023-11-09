@@ -90,15 +90,14 @@ nav a:hover, .subnav:hover .subnavButton{
 }
 
 .slider {
-    position: relative;  
+    position: relative; 
 }
 
 
 #sliderImg {
     width:100%;
-    height:auto;
+    height:42vw;
     object-fit: cover;
-    opacity:100%;
     animation-name: fade;
     animation-duration:2.5s;
     filter: brightness(60%);
@@ -111,13 +110,12 @@ nav a:hover, .subnav:hover .subnavButton{
     top:0;
     text-align: center;
     font-size: 5vw;
-    opacity:100%;
 }
 
 #goRight, #goLeft {
     cursor: pointer;
     position: absolute;
-    top: 40%;
+    top: 50%;
     width: auto;
     margin-top: -22px;
     padding: 16px;
