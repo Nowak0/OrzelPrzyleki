@@ -16,7 +16,7 @@ header {
     padding: 5px;
     padding-right:10px;
     justify-content: space-between;
-    z-index: 10;
+    z-index: 99;
 }
 
 .logo a,
@@ -30,10 +30,10 @@ nav {
 }
 
 nav ul {
-    /*list-style: none;*/
     margin: 0;
     padding: 0;
 }
+
 nav li {
     display: inline-block;
     margin-top:0;
@@ -90,19 +90,18 @@ nav a:hover, .subnav:hover .subnavButton{
 }
 
 .slider {
-    position: relative;
+    position: relative;  
 }
 
-.sliderImg {
-    animation-name: fade;
-    animation-duration:1.5s;
-}
 
 #sliderImg {
     width:100%;
     height:auto;
     object-fit: cover;
-    opacity:80%;
+    opacity:100%;
+    animation-name: fade;
+    animation-duration:2.5s;
+    filter: brightness(60%);
 }
 
 .sliderText { 
@@ -175,19 +174,18 @@ td:first-child {
 }
 
 #goToTop {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed/sticky position */
-    bottom: 1vw; /* Place the button at the bottom of the page */
-    right: 1vw; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    background-color: red; /* Set a background color */
-    color: white; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 0.5vw; /* Some padding */
-    border-radius: 0.5vw; /* Rounded corners */
-    font-size: 1.5vw; /* Increase font size */
+    display: none;
+    position: fixed;
+    bottom: 1vw;
+    right: 1vw;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    padding: 0.5vw;
+    border-radius: 0.5vw;
+    font-size: 1.5vw;
     text-decoration: none;
 }
 
@@ -225,10 +223,10 @@ footer p {
 
 @keyframes fade {
     from {
-        opacity: 20%;
+        filter: brightness(10%);
     }
     to {
-        opacity:80%;
+        opacity:100%;
     }
 }
 

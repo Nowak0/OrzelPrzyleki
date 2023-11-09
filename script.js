@@ -1,12 +1,13 @@
 const disableMessage = document.getElementById('JSnotworking');
 const setStandingsVisibility = document.getElementById('standings');
+const goToTop = document.getElementById('goToTop');
 disableMessage.style.display = 'none';
 setStandingsVisibility.style.display = 'block';
 var countClicksSlider = 1;
 var timeout;
 
 function startTimeout() {
-    timeout=window.setTimeout(changeSlider,3000);
+    timeout=window.setTimeout(changeSlider,5000);
 }
 
 function addSlider() {
@@ -52,6 +53,7 @@ function changeSlider() {
     const goLeft = document.getElementById('goLeft');
     const goRight = document.getElementById('goRight');
     clearTimeout(timeout);
+    resetAnimation();
     if (countClicksSlider == 1) {
         image.setAttribute('src', 'pics/rozgrzewka.jpeg');
         image.setAttribute('alt', 'zdjecie naglowkowe 1');
@@ -65,10 +67,16 @@ function changeSlider() {
         image.setAttribute('alt','zdjecie naglowkowe 3');
         countClicksSlider = 0;
     }
+    $(image).fadeIn();
     startTimeout();
 }
 
-const goToTopButton = document.getElementById('goToTop');
+function resetAnimation() {
+    const image=document.getElementById('sliderImg');
+    image.style.animation='none';
+    image.offsetHeight;
+    image.style.animation=null;
+}
 
 window.onscroll = function() {
     scrollFunction();
@@ -76,10 +84,10 @@ window.onscroll = function() {
 
 function scrollFunction() {
     if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-        goToTopButton.style.display = 'block';
+        goToTop.style.display = 'block';
     }
     else {
-        goToTopButton.style.display = 'none';
+        goToTop.style.display = 'none';
     }
 }
 

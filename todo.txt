@@ -11,3 +11,4 @@ players site:
 - photos
 - names
 
+glow animation
