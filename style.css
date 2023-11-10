@@ -103,13 +103,15 @@ nav a:hover, .subnav:hover .subnavButton{
     filter: brightness(60%);
 }
 
-.sliderText { 
+#sliderText { 
     color:white;
     position: absolute;
     width:100%;
-    top:0;
+    top:12vw;
     text-align: center;
     font-size: 5vw;
+    animation-name: fade;
+    animation-duration:2.5s;
 }
 
 #goRight, #goLeft {
@@ -122,7 +124,7 @@ nav a:hover, .subnav:hover .subnavButton{
     color: black;
     font-weight: bold;
     font-size: 1.5vw;
-    transition: 0.6s ease;
+    transition: 1s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
 }
@@ -136,6 +138,20 @@ nav a:hover, .subnav:hover .subnavButton{
     left:0;
 }
 
+#sliderContactButton {
+    cursor: pointer;
+    position: relative;
+    top: -15vw;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5vw;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
 
 #JSnotworking {
     color:red;

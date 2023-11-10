@@ -3,11 +3,12 @@ const setStandingsVisibility = document.getElementById('standings');
 const goToTop = document.getElementById('goToTop');
 disableMessage.style.display = 'none';
 setStandingsVisibility.style.display = 'block';
-var countClicksSlider = 1;
-var timeout;
+let countClicksSlider = 1;
+let timeout;
 
 function startTimeout() {
     timeout=window.setTimeout(changeSlider,5000);
+
 }
 
 function addSlider() {
@@ -16,15 +17,13 @@ function addSlider() {
     const divSlider = document.createElement('div');
     const image = document.createElement('img');
     const createText = document.createElement('p');
-    const addText=document.createTextNode('DZIEŃ DOBRY');
+    createText.innerHTML="Zawsze walczymy do końca!<br> Dołącz do nas!"
     const goRight = document.createElement('button');
     const goLeft = document.createElement('button');
+    const contactButton = document.createElement('button');
+    contactButton.innerHTML='Kontakt';
     goLeft.innerHTML='&#129028;';
     goRight.innerHTML='&#129030;';
-    //goLeft.textContent = '<i class="&#129028;"></i>'
-    //goRight.textContent='wprawo';
-    //goLeft.classList.add('goLeft');
-    //goRight.classList.add('goRight');
     divSlider.classList.add('slider');
     createText.classList.add('sliderText');
     image.classList.add('sliderImg');
@@ -34,6 +33,8 @@ function addSlider() {
     image.setAttribute('id','sliderImg')
     image.setAttribute('src', 'pics/rozgrzewkaSlider.jpeg');
     image.setAttribute('alt', 'zdjecie naglowkowe 1');
+    contactButton.setAttribute('id','sliderContactButton');
+    contactButton.style.display='none';
     goLeft.onclick = function() {
         if(countClicksSlider>=2) {countClicksSlider-=2;}
         else if(countClicksSlider>3) {countClicksSlider=0;}
@@ -43,12 +44,14 @@ function addSlider() {
     goRight.onclick = function() {
         changeSlider();
     }
-
-    createText.appendChild(addText);
+    contactButton.onclick = function() {
+        window.location.href="kontakt.html";
+    }
     divSlider.appendChild(image);
     divSlider.appendChild(createText);
     divSlider.appendChild(goLeft);
     divSlider.appendChild(goRight);
+    divSlider.appendChild(contactButton);
     divMain.insertBefore(divSlider, divFetch);
     startTimeout();
 }
@@ -58,21 +61,28 @@ addSlider();
 function changeSlider() {
     countClicksSlider+=1;
     const image = document.getElementById('sliderImg');
-    const goLeft = document.getElementById('goLeft');
-    const goRight = document.getElementById('goRight');
+    const text = document.getElementById('sliderText');
+    const contactButton = document.getElementById('sliderContactButton');
     clearTimeout(timeout);
     resetAnimation();
     if (countClicksSlider == 1) {
         image.setAttribute('src', 'pics/rozgrzewkaSlider.jpeg');
         image.setAttribute('alt', 'zdjecie naglowkowe 1');
+        text.innerHTML="Zawsze walczymy do końca!<br> Dołącz do nas!"
+        contactButton.style.display='none';
+
     }
     if (countClicksSlider == 2) {
         image.setAttribute('src', 'pics/juniorzySlider.jpg');
         image.setAttribute('alt', 'zdjecie naglowkowe 2');
+        text.innerHTML="Szkolimy małe Orlęta";
+        contactButton.style.display='none';
     }
     if (countClicksSlider == 3) {
         image.setAttribute('src','pics/wsparcie_slider.jpg');
         image.setAttribute('alt','zdjecie naglowkowe 3');
+        text.innerHTML="Skontaktuj się z nami"
+        contactButton.style.display='inline';
         countClicksSlider = 0;
     }
     startTimeout();
@@ -80,9 +90,13 @@ function changeSlider() {
 
 function resetAnimation() {
     const image=document.getElementById('sliderImg');
+    const text = document.getElementById('sliderText');
     image.style.animation='none';
     image.offsetHeight;
     image.style.animation=null;
+    text.style.animation='none';
+    text.offsetHeight;
+    text.style.animation=null;
 }
 
 window.onscroll = function() {
