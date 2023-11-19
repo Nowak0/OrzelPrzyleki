@@ -1,22 +1,42 @@
-* {box-sizing:border-box}
-
 body {
     background-color: whitesmoke;
     text-align:center;
     margin:auto;
     font-family: 'Barlow Semi Condensed', sans-serif;
     width:100%;
+    align-items: center;
+    justify-content: center;
 }
 header {
-    background-color:  rgb(240, 236, 222);
+    background-color:  #dfcfbe;
     position:sticky;
     top:0;
     display:flex;
     align-items: center;
-    padding: 5px;
-    padding-right:10px;
+    padding: 0.2vw;
+    padding-right:0.4vw;
     justify-content: space-between;
     z-index: 99;
+}
+
+button {
+    display: inline-block;
+	padding: 0.7vw 1.4vw;
+	color: #fff;
+    border:none;
+	text-transform: uppercase;
+	letter-spacing: .10rem;
+	transition: all .3s;
+	position: relative;
+	overflow: hidden;
+    background-color: #00B977;
+    box-shadow: 0 2px 25px rgba(0, 255, 221, 0.5);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #254636;
+    transition: 1s ease;
 }
 
 .logo a,
@@ -46,17 +66,17 @@ nav a {
     display: block;
 }
 
-nav a:hover, .subnav:hover .subnavButton{
-    background-color: black;
-    color: red;
+nav a:hover, .subnav:hover .subnavHeader{
+    background-color: #254636;
+    color: white;
 }  
   
-.subnavButton {
+.subnavHeader {
     font-size: 1vw; 
     border: none;
     color: black;
     padding: 10px 15px;
-    background-color: rgb(240, 236, 222);
+    background-color: #dfcfbe;
     font-family: 'Barlow Semi Condensed', sans-serif;
     margin: 0;
   } 
@@ -64,30 +84,24 @@ nav a:hover, .subnav:hover .subnavButton{
 .subnavContent {
     display: none;
     position:absolute;
-    background-color: black;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: #254636;
+    min-width: 8vw;
   }
 
 
 .subnavContent a {
-    color:red;
+    color:white;
     text-align: left;
   } 
 
 
 .subnavContent a:hover {
-    color:white;
+    color:lightskyblue;
   }
 
 .subnav:hover .subnavContent {
     display: block;
   }
-
-
-.main {
-    margin-bottom: 2vw;
-}
 
 .slider {
     position: relative; 
@@ -119,14 +133,17 @@ nav a:hover, .subnav:hover .subnavButton{
     position: absolute;
     top: 50%;
     width: auto;
+    height:auto;
     margin-top: -22px;
-    padding: 16px;
+    padding: 14px;
+    background-color: lightgrey;
     color: black;
     font-weight: bold;
     font-size: 1.5vw;
-    transition: 1s ease;
+    transition: 0.5s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
+    opacity:50%;
 }
 
 #goRight {
@@ -138,12 +155,17 @@ nav a:hover, .subnav:hover .subnavButton{
     left:0;
 }
 
+#goLeft:hover, #goRight:hover {
+    opacity:100%;
+    color:white;
+    background-color: darkgrey;
+}
+
 #sliderContactButton {
     cursor: pointer;
-    position: relative;
+    position: absolute;
     top: -15vw;
     width: auto;
-    margin-top: -22px;
     padding: 16px;
     color: black;
     font-weight: bold;
@@ -151,6 +173,7 @@ nav a:hover, .subnav:hover .subnavButton{
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
+    z-index:90;
 }
 
 #JSnotworking {
@@ -162,10 +185,10 @@ nav a:hover, .subnav:hover .subnavButton{
     display: none;
     text-align:center;
     padding-bottom:2vw;
+    margin-top: 2vw;
 }
 
 table {
-    font-size: 80%;
     width: auto;
     margin-left:auto;
     margin-right:auto;
@@ -195,7 +218,7 @@ td:first-child {
     z-index: 99;
     border: none;
     outline: none;
-    background-color: red;
+    background-color: #00B977;
     color: white;
     padding: 0.5vw;
     border-radius: 0.5vw;
@@ -204,27 +227,156 @@ td:first-child {
 }
 
 #goToTop:hover {
-    background-color: darkred;
+    background-color: #254636;
 }
 
-#contactInfo {
+.mainContent {
+    width: 80%;
+    margin-left:10vw;
+    align-items: center;
+    display: flex;
+    height: 500px;
+    flex-direction: row;
+    background-color: lightgray;
+
+}
+
+.mainContent img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mainContent .mainContentText {
+    margin:2%;
+    width:50%;
+    height: 100%;
+    font-size: 1.1vw;
+    text-align: left;
+}
+
+.formContainer #contactInfo {
     font-size:2vw;
+    color: #254636;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin-top: 30px;
+    text-align: center;
 }
 
-form {
-    text-align:500px;
+.formContainer form {
+    padding: 30px 0 0 0;
 }
 
-form input {
-    margin-top:1vw;
-    margin-bottom: 1vw;
+.formContainer {
+    margin-left:20vw;
+    margin-right: 20vw;
+    max-width: 60vw;
+    height: auto;
+    background: whitesmoke;
+    width: 60vw;
+    padding: 0.7vw 1vw 0.25vw 1vw;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    overflow: hidden;
 }
+
+.formContainer form .formRow {
+    display: flex;
+    margin-bottom: 2vw;
+}
+
+form .formRow .inputData {
+    width: 100%;
+    height: 2vw;
+    margin-right: 0.5vw;
+    margin-bottom: 0.5vw;
+    position:relative;
+}
+
+.inputData input, .inputData select {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 0.9vw;
+    border-bottom: 0.15vw solid rgba(0,0,0, 0.12);
+}
+
+#seniorTeam, #juniorTeam {
+    height: 50%;
+}
+
+.inputData label {
+    margin-left:0.5vw;
+    left:0;
+    position: absolute;
+    pointer-events: none;
+    bottom: 0.5vw;
+    font-size: 0.9vw;
+    transition: all 0.3s ease;
+}
+
+
+.inputData input:focus ~ label, .textarea textarea:focus ~ label,
+.inputData input:valid ~ label, .textarea textarea:valid ~ label{
+    transform: translate(-0.5vw,-2vw);
+    font-size: 1vw;
+    color: #00B977;
+}
+
+.textarea textarea {
+    margin-top: 20px;
+    padding-top: 10px;
+    font-size: 0.8vw;
+}
+
+.textarea label {
+    width: 100%;
+    margin-top:2vw;
+    bottom: 2px;
+    background: whitesmoke; 
+}
+
+.chooseFile {
+    margin-top:2vw;
+    text-align: center;
+}
+
+.formButtons .inputData {
+    width: 25%!important;
+}
+
+
+.formButtons .inputData input {
+    
+    background: -webkit-linear-gradient(left, #00B977, #254636);
+    color:white!important;
+    border: none;
+    color: black;
+    font-size: 0.9vw;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+#getLocation {
+    margin-top: 4vw;
+    margin-bottom: 4vw;
+    display: none;
+}
+
+#infoStadium {
+    display:none;
+}
+
 footer {
-    position: static;
+    position:static;
     bottom:0;
     width:100%;
-    background-color: #201f8a;
-    color: whitesmoke;
+    background-color:#dfcfbe;
+    color: black;
     border-top: 2px solid rgba(157, 157, 157, 0.67);
     padding-top: 22px;
     padding-bottom: 22px;
@@ -247,5 +399,23 @@ footer p {
 @media only screen and (max-width: 300px) {
     body {
         font-size:11px;
+    }
+}
+
+@media (max-width:700px) {
+    .formContainer #contactInfo {
+        font-size:30px;
+    }
+    .formContainer form {
+        padding: 10px 0 0 0;
+    }
+    .formContainer form .formRow {
+        display:block;
+    }
+    form .formRow .inputData{
+        margin: 35px 0!important;
+    }
+    .formButtons .inputData {
+        width: 40%!important;
     }
 }

@@ -29,10 +29,10 @@
           </li>
           <li>
             <div class="subnav">
-              <button class="subnavButton">Druzyna &#8595;</button>
+              <a class="subnavHeader">Druzyna &#8595;</a>
               <div class="subnavContent">
                 <a href="zawodnicy.html">Zawodnicy</a>
-                <a href="#">Galeria zdjęć</a>
+                <a href="https://www.facebook.com/OrzelPrzyleki">Facebook</a>
               </div>
             </div>
           </li>
@@ -51,18 +51,26 @@
           JavaScript nie działa lub nie jest włączony
         </p>
       </div>
-      <img src="pics/jordan2.jpg" alt="">
-      <br>
-      <img src="pics/jordan1.webp" alt="">
-      <br>
-      <a id="goToTop" href="##">&#129029;</a>
+      <div class="mainContent">
+        <div class="mainContentText">
+          <h6>Nasz klub</h6>
+          <h2>Orły to my!</h2>
+          <p>W 2018 znaleźliśmy się na piłkarskiej mapie województwa kujawsko-pomorskiego. 
+          Łączy nas piłka, pasja do sportu i rywalizacji. 
+          Z roku na rok podnosimy swoje umiejętności na boisku, ale także rozwijamy organizacyjnie. 
+          Rozwijamy struktury naszego małego klubu. Od 2022 szkolimy najmłodszych adeptów piłkarskiego rzemiosła. To dopiero początek!</p>
+          <p>Zapraszamy na stadion przy ulicy Zabytkowej 8 w Przyłękach i do śledzenia naszego facebooka.</p>
+        </div>
+        <img src="pics/rozgrzewka2.jpeg" alt="zawodnicy podczas rozgrzewki">
+      </div>
+      <a id="goToTop" href="#top">&#129029;</a>
     </div>
+    <br>
     <footer id="mainFooter" onclick='changeFooter("mainFooter","mainFooterText")'>
       <p id="mainFooterText">Copyright &copy; 2023 - Jakub Nowak</p>
-       <!---<button id="goUpButton"><a href="">Go UP</a></button> --->
     </footer>
-    <script src="script.js"></script>
-    <script src="fetchAPI.js"></script>
-    <script src="footer.js"></script>
+    <script src="script.js" defer></script>
+    <script src="fetchAPI.js" defer></script>
+    <script src="footer.js" defer></script>
   </body>
 </html>

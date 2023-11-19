@@ -10,7 +10,7 @@
             <birth>1987</birth>
             <image source=""/>
             <playerNumber>8</playerNumber>
-            <position starter="yes">defender</position>
+            <position rotation="starter">defender</position>
             <cards suspended="no">
                 <yellow>3</yellow>
                 <red>0</red>
@@ -28,5 +28,15 @@
    <photos>
         <image source=""></image>
    </photos>
+
+   <about>
+        <yearFounded>2018</yearFounded>
+        <address privateField="yes">
+            <street>Zabytkowa 8</street>
+            <city>Przyłęki</city>
+            <province>Kujawsko-Pomorskie</province>
+        </address>
+        <league>B Klasa</league>
+   </about>
 
 </websiteData>

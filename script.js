@@ -20,8 +20,6 @@ function addSlider() {
     createText.innerHTML="Zawsze walczymy do końca!<br> Dołącz do nas!"
     const goRight = document.createElement('button');
     const goLeft = document.createElement('button');
-    const contactButton = document.createElement('button');
-    contactButton.innerHTML='Kontakt';
     goLeft.innerHTML='&#129028;';
     goRight.innerHTML='&#129030;';
     divSlider.classList.add('slider');
@@ -33,8 +31,6 @@ function addSlider() {
     image.setAttribute('id','sliderImg')
     image.setAttribute('src', 'pics/rozgrzewkaSlider.jpeg');
     image.setAttribute('alt', 'zdjecie naglowkowe 1');
-    contactButton.setAttribute('id','sliderContactButton');
-    contactButton.style.display='none';
     goLeft.onclick = function() {
         if(countClicksSlider>=2) {countClicksSlider-=2;}
         else if(countClicksSlider>3) {countClicksSlider=0;}
@@ -44,14 +40,10 @@ function addSlider() {
     goRight.onclick = function() {
         changeSlider();
     }
-    contactButton.onclick = function() {
-        window.location.href="kontakt.html";
-    }
     divSlider.appendChild(image);
     divSlider.appendChild(createText);
     divSlider.appendChild(goLeft);
     divSlider.appendChild(goRight);
-    divSlider.appendChild(contactButton);
     divMain.insertBefore(divSlider, divFetch);
     startTimeout();
 }
@@ -62,27 +54,22 @@ function changeSlider() {
     countClicksSlider+=1;
     const image = document.getElementById('sliderImg');
     const text = document.getElementById('sliderText');
-    const contactButton = document.getElementById('sliderContactButton');
     clearTimeout(timeout);
     resetAnimation();
     if (countClicksSlider == 1) {
         image.setAttribute('src', 'pics/rozgrzewkaSlider.jpeg');
         image.setAttribute('alt', 'zdjecie naglowkowe 1');
         text.innerHTML="Zawsze walczymy do końca!<br> Dołącz do nas!"
-        contactButton.style.display='none';
-
     }
     if (countClicksSlider == 2) {
         image.setAttribute('src', 'pics/juniorzySlider.jpg');
         image.setAttribute('alt', 'zdjecie naglowkowe 2');
         text.innerHTML="Szkolimy małe Orlęta";
-        contactButton.style.display='none';
     }
     if (countClicksSlider == 3) {
         image.setAttribute('src','pics/wsparcie_slider.jpg');
         image.setAttribute('alt','zdjecie naglowkowe 3');
         text.innerHTML="Skontaktuj się z nami"
-        contactButton.style.display='inline';
         countClicksSlider = 0;
     }
     startTimeout();

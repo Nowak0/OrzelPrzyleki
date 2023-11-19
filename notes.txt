@@ -2,4 +2,4 @@
 number of global simpleType:
     - 5
 number of local simpleType:
-    - 3
+    - 4

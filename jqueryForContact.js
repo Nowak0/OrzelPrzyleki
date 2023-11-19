@@ -1,11 +1,15 @@
+const locationButton = document.getElementById('getLocation');
+const locationText=document.getElementById('infoStadium');
+locationButton.style.display='inline';
+locationText.style.display='block';
 $(document).ready(function() {
     var countClicks=0;
     $("input").focus(function() {
-        $(this).css("background-color", "navy");
+        $(this).css("background-color", "lightskyblue");
         $(this).css("color", "white");
     });
     $("input").blur(function() {
-        $(this).css("background-color", "whitesmoke");
+        $(this).css("background-color", "white");
         $(this).css("color", "black");
     });
     $("#todayDate").datepicker();

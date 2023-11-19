@@ -14,6 +14,7 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
+            <xs:element name="about" type="aboutType"/>
         </xs:all>
     </xs:complexType>
 
@@ -35,11 +36,11 @@
                 <xs:complexType>
                     <xs:simpleContent>
                         <xs:extension base="positionType">
-                            <xs:attribute name="starter" use="required">
+                            <xs:attribute name="rotation" use="required">
                                 <xs:simpleType>
                                     <xs:restriction base="shortStringType">
-                                        <xs:enumeration value="yes"/>
-                                        <xs:enumeration value="no"/>
+                                        <xs:enumeration value="starter"/>
+                                        <xs:enumeration value="bench"/>
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:attribute>
@@ -92,10 +93,8 @@
     <xs:complexType name="cardType">
         <xs:choice>
             <xs:sequence>
-                <xs:element name="yellow" type="cardNumberType" minOccurs="1" maxOccurs="1">
-                </xs:element>
-                <xs:element name="red" type="cardNumberType" minOccurs="1" maxOccurs="1">
-                </xs:element>
+                <xs:element name="yellow" type="cardNumberType" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="red" type="cardNumberType" minOccurs="1" maxOccurs="1"/>
             </xs:sequence>
             <xs:element name="sum" type="xs:unsignedInt"/>
         </xs:choice>
@@ -120,6 +119,7 @@
             <xs:element name="residence" type="shortStringType" minOccurs="1" maxOccurs="2"/>
             <xs:element name="link" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
+        <xs:attribute name="local" use="optional"></xs:attribute>
     </xs:complexType>
 
     <xs:complexType name="attachmentType">
@@ -128,6 +128,30 @@
                 <xs:attribute name="source" type="xs:anyURI" use="required"/>
             </xs:extension>
         </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="aboutType">
+        <xs:sequence>
+            <xs:element name="yearFounded" type="shortStringType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="address"> 
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="street" type="shortStringType"/>
+                        <xs:element name="city" type="shortStringType"/>
+                        <xs:element name="province" type="shortStringType"/>
+                    </xs:sequence>
+                    <xs:attribute name="privateField" use="optional">
+                        <xs:simpleType>
+                            <xs:restriction base="shortStringType">
+                                <xs:enumeration value="yes"/>
+                                <xs:enumeration value="no"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="league" type="shortStringType"/>
+        </xs:sequence>
     </xs:complexType>
 
     <xs:element name="image" type="attachmentType"/>
@@ -150,7 +174,7 @@
     <xs:simpleType name="longStringType">
         <xs:restriction  base="xs:string">
             <xs:minLength value="20"/>
-            <xs:maxLength value="100"/>
+            <xs:maxLength value="200"/>
         </xs:restriction>
     </xs:simpleType>
 
