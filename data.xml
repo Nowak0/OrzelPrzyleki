@@ -19,7 +19,7 @@
    </players>
 
    <sponsors>
-        <sponsor>
+        <sponsor local="yes">
             <name>Przyłęki</name>
             <residence>Bydgoszcz,Polska</residence>
         </sponsor>
