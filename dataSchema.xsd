@@ -7,7 +7,13 @@
         <xs:all>
             <xs:element name="players" type="playersType"/>
             <xs:element name="sponsors" type="sponsorsType"/>
-            <xs:element name="photos"></xs:element>
+            <xs:element name="photos">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:group ref="imageAndLink"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
         </xs:all>
     </xs:complexType>
 
@@ -24,13 +30,46 @@
             <xs:element name="birth" type="xs:gYear" minOccurs="1" maxOccurs="1"/>
             <xs:element name="image" minOccurs="1" maxOccurs="unbounded"/>
             <xs:element name="playerNumber" type="playerNumberType" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="position" type="positionType"></xs:element>
-            <xs:element name="cards" type="cardType" minOccurs="1" maxOccurs="1"/>
+            <xs:group ref="imageAndLink"/>
+            <xs:element name="position">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="positionType">
+                            <xs:attribute name="starter" use="required">
+                                <xs:simpleType>
+                                    <xs:restriction base="shortStringType">
+                                        <xs:enumeration value="yes"/>
+                                        <xs:enumeration value="no"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:attribute>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="cards" minOccurs="1" maxOccurs="1"> 
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="cardType">
+                            <xs:attribute name="suspended" use="optional">
+                                <xs:simpleType>
+                                    <xs:restriction base="shortStringType">
+                                        <xs:enumeration value="yes"/>
+                                        <xs:enumeration value="no"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:attribute>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
         </xs:sequence>
-        <xs:attribute name="team" use="required"></xs:attribute>
+        <xs:attributeGroup ref="team"/>
+        <xs:attribute name="captain" use="optional" />
     </xs:complexType>
 
-    <xs:attribute name="team">
+    <xs:attributeGroup name="team">
+        <xs:attribute name="team">
             <xs:simpleType>
                 <xs:restriction base="shortStringType">
                     <xs:enumeration value="senior"/>
@@ -38,6 +77,7 @@
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
+    </xs:attributeGroup>
 
     <xs:simpleType name="positionType">
         <xs:restriction base="shortStringType">
@@ -46,6 +86,7 @@
             <xs:enumeration value="midfielder"/>
             <xs:enumeration value="forward"/>
         </xs:restriction>
+
     </xs:simpleType>
 
     <xs:complexType name="cardType">
@@ -76,6 +117,7 @@
     <xs:complexType name="sponsorType">
         <xs:sequence>
             <xs:element name="name" type="shortStringType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="residence" type="shortStringType" minOccurs="1" maxOccurs="2"/>
             <xs:element name="link" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
@@ -90,6 +132,13 @@
 
     <xs:element name="image" type="attachmentType"/>
     <xs:element name="link" type="attachmentType"/>
+
+    <xs:group name="imageAndLink">
+        <xs:sequence>
+            <xs:element name="image" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="link" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:group>
 
     <xs:simpleType name="shortStringType">
         <xs:restriction base="xs:string">

@@ -4,15 +4,15 @@
    xsi:noNamespaceSchemaLocation="dataSchema.xsd">
 
    <players>
-        <player team="senior">
+        <player team="senior" captain="yes">
             <firstName>Maciej</firstName>
             <lastName>Nowak</lastName>
             <birth>1987</birth>
             <image source=""/>
             <playerNumber>8</playerNumber>
-            <position>defender</position>
-            <cards>
-                <yellow>13</yellow>
+            <position starter="yes">defender</position>
+            <cards suspended="no">
+                <yellow>3</yellow>
                 <red>0</red>
             </cards>
         </player>
@@ -21,6 +21,7 @@
    <sponsors>
         <sponsor>
             <name>Przyłęki</name>
+            <residence>Bydgoszcz,Polska</residence>
         </sponsor>
    </sponsors>
 
