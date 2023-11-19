@@ -1,0 +1,8 @@
+number of global complexType:
+    - 7
+number of local complexType:
+    - 2
+number of global simpleType:
+    - 5
+number of local simpleType:
+    - 1

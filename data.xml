@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<websiteData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:noNamespaceSchemaLocation="dataSchema.xsd">
+
+   <players>
+        <player team="senior">
+            <firstName>Maciej</firstName>
+            <lastName>Nowak</lastName>
+            <birth>1987</birth>
+            <image source=""/>
+            <playerNumber>8</playerNumber>
+            <position>defender</position>
+            <cards>
+                <yellow>13</yellow>
+                <red>0</red>
+            </cards>
+        </player>
+   </players>
+
+   <sponsors>
+        <sponsor>
+            <name>Przyłęki</name>
+        </sponsor>
+   </sponsors>
+
+   <photos>
+        <image source=""></image>
+   </photos>
+
+</websiteData>

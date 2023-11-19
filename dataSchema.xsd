@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+
+    <xs:element name="websiteData" type="websiteDataType"/>
+
+    <xs:complexType name="websiteDataType">
+        <xs:all>
+            <xs:element name="players" type="playersType"/>
+            <xs:element name="sponsors" type="sponsorsType"/>
+            <xs:element name="photos"></xs:element>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="playersType">
+        <xs:sequence>
+            <xs:element name="player" type="playerType" minOccurs="1" maxOccurs="21"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="playerType">
+        <xs:sequence>
+            <xs:element name="firstName" type="shortStringType" minOccurs="1" maxOccurs="3"/>
+            <xs:element name="lastName" type="shortStringType" minOccurs="1" maxOccurs="3"/>
+            <xs:element name="birth" type="xs:gYear" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="image" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="playerNumber" type="playerNumberType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="position" type="positionType"></xs:element>
+            <xs:element name="cards" type="cardType" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="team" use="required"></xs:attribute>
+    </xs:complexType>
+
+    <xs:attribute name="team">
+            <xs:simpleType>
+                <xs:restriction base="shortStringType">
+                    <xs:enumeration value="senior"/>
+                    <xs:enumeration value="junior"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+
+    <xs:simpleType name="positionType">
+        <xs:restriction base="shortStringType">
+            <xs:enumeration value="goalkeeper"/>
+            <xs:enumeration value="defender"/>
+            <xs:enumeration value="midfielder"/>
+            <xs:enumeration value="forward"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="cardType">
+        <xs:choice>
+            <xs:sequence>
+                <xs:element name="yellow" type="cardNumberType" minOccurs="1" maxOccurs="1">
+                </xs:element>
+                <xs:element name="red" type="cardNumberType" minOccurs="1" maxOccurs="1">
+                </xs:element>
+            </xs:sequence>
+            <xs:element name="sum" type="xs:unsignedInt"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:simpleType name="cardNumberType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="15"/>
+        </xs:restriction> 
+    </xs:simpleType>
+
+    <xs:complexType name="sponsorsType">
+        <xs:sequence>
+           <xs:element name="sponsor" type="sponsorType" minOccurs="0" maxOccurs="unbounded"/> 
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="sponsorType">
+        <xs:sequence>
+            <xs:element name="name" type="shortStringType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="link" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="attachmentType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="source" type="xs:anyURI" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:element name="image" type="attachmentType"/>
+    <xs:element name="link" type="attachmentType"/>
+
+    <xs:simpleType name="shortStringType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="20"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="longStringType">
+        <xs:restriction  base="xs:string">
+            <xs:minLength value="20"/>
+            <xs:maxLength value="100"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="playerNumberType">
+        <xs:restriction base="xs:integer">
+            <xs:maxInclusive value="99"/>
+            <xs:pattern value="[1-9][0-9]*"/>
+        </xs:restriction> 
+    </xs:simpleType>
+</xs:schema>
