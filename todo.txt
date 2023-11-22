@@ -1,5 +1,4 @@
 slider:
-- add and change text;
 - improve visual aspects - css;
 
 main:

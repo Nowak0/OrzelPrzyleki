@@ -5,13 +5,13 @@ function changeFooter(idFooter,idFooterParagraph) {
     const getFooter = document.getElementById(idFooter);
     const getFooterText = document.getElementById(idFooterParagraph);
     if (countClicksFooter % 2 == 1) {
-        getFooter.style.backgroundColor = 'darkred';
-        getFooter.style.color = 'black';
+        getFooter.style.backgroundColor = 'lightskyblue';
+        getFooter.style.color = 'white';
         getFooterText.innerHTML = "Copyright &copy; 2023 - Jakub Nowak s197860";
     }
     else {
-        getFooter.style.backgroundColor = 'navy';
-        getFooter.style.color = 'white';
+        getFooter.style.backgroundColor = '#dfcfbe';
+        getFooter.style.color = 'black';
         getFooterText.innerHTML = "Copyright &copy; 2023 - Jakub Nowak";
     }
 }
