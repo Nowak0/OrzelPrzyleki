@@ -34,6 +34,12 @@ button {
     cursor: pointer;
 }
 
+a, td a {
+    text-decoration: none;
+}
+
+
+
 button:hover {
     background-color: #254636;
     transition: 1s ease;
@@ -253,6 +259,15 @@ td:first-child {
     height: 100%;
     font-size: 1.1vw;
     text-align: left;
+}
+
+.mainContentText h6::first-line, .mainContentText a:visited {
+    color:#00B977;
+}
+
+
+td a:visited {
+    color:green
 }
 
 .formContainer #contactInfo {

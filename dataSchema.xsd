@@ -6,7 +6,7 @@
     <xs:complexType name="websiteDataType">
         <xs:all>
             <xs:element name="players" type="playersType"/>
-            <xs:element name="sponsors" type="sponsorsType"/>
+            <xs:element name="standings" type="standingsType"/>
             <xs:element name="photos">
                 <xs:complexType>
                     <xs:sequence>
@@ -28,9 +28,9 @@
         <xs:sequence>
             <xs:element name="firstName" type="shortStringType" minOccurs="1" maxOccurs="3"/>
             <xs:element name="lastName" type="shortStringType" minOccurs="1" maxOccurs="3"/>
-            <xs:element name="birth" type="xs:gYear" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="birth" type="birthType" minOccurs="1" maxOccurs="1"/>
             <xs:element name="image" minOccurs="1" maxOccurs="unbounded"/>
-            <xs:element name="playerNumber" type="playerNumberType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="playerNumber" type="positiveNumberType" minOccurs="1" maxOccurs="1"/>
             <xs:group ref="imageAndLink"/>
             <xs:element name="position">
                 <xs:complexType>
@@ -66,11 +66,11 @@
             </xs:element>
         </xs:sequence>
         <xs:attributeGroup ref="team"/>
-        <xs:attribute name="captain" use="optional" />
+        <xs:attribute name="role" use="optional" />
     </xs:complexType>
 
     <xs:attributeGroup name="team">
-        <xs:attribute name="team">
+        <xs:attribute name="teamDivision" use="required">
             <xs:simpleType>
                 <xs:restriction base="shortStringType">
                     <xs:enumeration value="senior"/>
@@ -87,7 +87,6 @@
             <xs:enumeration value="midfielder"/>
             <xs:enumeration value="forward"/>
         </xs:restriction>
-
     </xs:simpleType>
 
     <xs:complexType name="cardType">
@@ -96,30 +95,55 @@
                 <xs:element name="yellow" type="cardNumberType" minOccurs="1" maxOccurs="1"/>
                 <xs:element name="red" type="cardNumberType" minOccurs="1" maxOccurs="1"/>
             </xs:sequence>
-            <xs:element name="sum" type="xs:unsignedInt"/>
+            <xs:element name="sum" type="xs:unsignedInt" minOccurs="1" maxOccurs="1"/>
         </xs:choice>
     </xs:complexType>
 
     <xs:simpleType name="cardNumberType">
-        <xs:restriction base="xs:integer">
+        <xs:restriction base="xs:unsignedInt">
             <xs:minInclusive value="0"/>
             <xs:maxInclusive value="15"/>
         </xs:restriction> 
     </xs:simpleType>
 
-    <xs:complexType name="sponsorsType">
+    <xs:simpleType name="birthType">
+        <xs:restriction base="xs:gYear">
+            <xs:minInclusive value="1920"/>
+            <xs:maxInclusive value="2020"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="standingsType">
         <xs:sequence>
-           <xs:element name="sponsor" type="sponsorType" minOccurs="0" maxOccurs="unbounded"/> 
+           <xs:element name="team" type="teamType" minOccurs="1" maxOccurs="11"/> 
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="sponsorType">
+    <xs:complexType name="teamType">
         <xs:sequence>
             <xs:element name="name" type="shortStringType" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="residence" type="shortStringType" minOccurs="1" maxOccurs="2"/>
-            <xs:element name="link" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="matchesPlayed" type="positiveNumberType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="points" type="xs:unsignedInt" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="wins" type="xs:unsignedInt" minOccurs="1" maxOccurs="1" />
+            <xs:element name="draws" type="xs:unsignedInt" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="loses" type="xs:unsignedInt" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="goals" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="resultsHome" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="goalDifferentialHome" minOccurs="1" maxOccurs="1"> 
+                <xs:simpleType>
+                    <xs:restriction base="setGoalsListLength"/>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="resultsAway" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="goalDifferentialAway" minOccurs="1" maxOccurs="1"> 
+                <xs:simpleType>
+                    <xs:restriction base="setGoalsListLength"/>
+                </xs:simpleType>
+            </xs:element>
+            <xs:group ref="imageAndLink"/>
         </xs:sequence>
-        <xs:attribute name="local" use="optional"></xs:attribute>
+        <xs:attributeGroup ref="team"/>
+        <xs:attribute name="streak" use="optional"/>
     </xs:complexType>
 
     <xs:complexType name="attachmentType">
@@ -136,31 +160,56 @@
             <xs:element name="address"> 
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="street" type="shortStringType"/>
+                        <xs:element ref="street"/>
                         <xs:element name="city" type="shortStringType"/>
                         <xs:element name="province" type="shortStringType"/>
                     </xs:sequence>
-                    <xs:attribute name="privateField" use="optional">
+                    <xs:attribute name="field" use="optional">
                         <xs:simpleType>
                             <xs:restriction base="shortStringType">
-                                <xs:enumeration value="yes"/>
-                                <xs:enumeration value="no"/>
+                                <xs:enumeration value="private"/>
+                                <xs:enumeration value="public"/>
                             </xs:restriction>
                         </xs:simpleType>
                     </xs:attribute>
                 </xs:complexType>
             </xs:element>
             <xs:element name="league" type="shortStringType"/>
+            <xs:element name="text" type="xs:string"/>
+            <xs:element name="facebook">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="link" minOccurs="1" maxOccurs="3"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
         </xs:sequence>
     </xs:complexType>
 
     <xs:element name="image" type="attachmentType"/>
     <xs:element name="link" type="attachmentType"/>
+    
+    <xs:simpleType name="goalsListRestriction">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="120"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="goalsListType">
+        <xs:list itemType="goalsListRestriction"></xs:list>
+    </xs:simpleType>
+
+    <xs:simpleType name="setGoalsListLength">
+        <xs:restriction base="goalsListType">
+            <xs:length value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
 
     <xs:group name="imageAndLink">
         <xs:sequence>
-            <xs:element name="image" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="link" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="image" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="link" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:group>
 
@@ -171,17 +220,17 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:simpleType name="longStringType">
-        <xs:restriction  base="xs:string">
-            <xs:minLength value="20"/>
-            <xs:maxLength value="200"/>
-        </xs:restriction>
-    </xs:simpleType>
-
-    <xs:simpleType name="playerNumberType">
+    <xs:simpleType name="positiveNumberType">
         <xs:restriction base="xs:integer">
             <xs:maxInclusive value="99"/>
             <xs:pattern value="[1-9][0-9]*"/>
         </xs:restriction> 
     </xs:simpleType>
+
+    <xs:element name="street">
+        <xs:simpleType>
+            <xs:union memberTypes="shortStringType positiveNumberType"/>
+        </xs:simpleType>
+    </xs:element>
+
 </xs:schema>

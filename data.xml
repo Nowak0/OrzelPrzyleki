@@ -4,7 +4,7 @@
    xsi:noNamespaceSchemaLocation="dataSchema.xsd">
 
    <players>
-        <player team="senior" captain="yes">
+        <player teamDivision="senior" role="captain">
             <firstName>Maciej</firstName>
             <lastName>Nowak</lastName>
             <birth>1987</birth>
@@ -18,25 +18,42 @@
         </player>
    </players>
 
-   <sponsors>
-        <sponsor local="yes">
-            <name>Przyłęki</name>
-            <residence>Bydgoszcz,Polska</residence>
-        </sponsor>
-   </sponsors>
+   <standings>
+        <team teamDivision="senior" streak="W 10">
+            <name>KS Brzoza</name>
+            <matchesPlayed>10</matchesPlayed>
+            <points>30</points>
+            <wins>10</wins>
+            <draws>0</draws>
+            <loses>0</loses>
+            <goals>52-4</goals>
+            <resultsHome>W: 5 D:0  L: 0</resultsHome>
+            <goalDifferentialHome>23 1</goalDifferentialHome>
+            <resultsAway>W: 5 D:0 L:0</resultsAway>
+            <goalDifferentialAway>29 3</goalDifferentialAway>
+            <link source="https://www.facebook.com/p/Klub-Sportowy-Brzoza-100041917726965/?locale=pl_PL"></link>
+        </team>
+    </standings>
 
    <photos>
-        <image source=""></image>
+        <image source=""/>
    </photos>
 
    <about>
         <yearFounded>2018</yearFounded>
-        <address privateField="yes">
+        <address field="private">
             <street>Zabytkowa 8</street>
             <city>Przyłęki</city>
             <province>Kujawsko-Pomorskie</province>
         </address>
         <league>B Klasa</league>
+        <text>
+            W 2018 znaleźliśmy się na piłkarskiej mapie województwa kujawsko-pomorskiego. Łączy nas piłka, pasja do sportu i rywalizacji. Z roku na rok podnosimy swoje umiejętności na boisku, ale także rozwijamy organizacyjnie.
+             Rozwijamy struktury naszego małego klubu. Od 2022 szkolimy najmłodszych adeptów piłkarskiego rzemiosła. To dopiero początek!
+        </text>
+        <facebook>
+            <link source="https://www.facebook.com/OrzelPrzyleki"></link>
+        </facebook>
    </about>
 
 </websiteData>

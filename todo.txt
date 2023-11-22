@@ -1,14 +1,11 @@
-slider:
-- improve visual aspects - css;
+HTML / CSS:
+- svg
+- galeria zdjec (min 5 zdjec) miniaturki a potem powiekszone 
+- 1 link do innych stron
 
-main:
-- add text for main content;
-- enhance main;
+XML / XSD :
+- uzupelnic dane (pamietac o dodaniu jeszcze 1 linku)
+- list
 
-players site:
-- photos
-- names
-- text
 
-glow animation
-
+DTD:
