@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<websiteData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:noNamespaceSchemaLocation="dataSchema.xsd">
+
+   <players>
+        <player team="senior" captain="yes">
+            <firstName>Maciej</firstName>
+            <lastName>Nowak</lastName>
+            <birth>1987</birth>
+            <image source=""/>
+            <playerNumber>8</playerNumber>
+            <position rotation="starter">defender</position>
+            <cards suspended="no">
+                <yellow>3</yellow>
+                <red>0</red>
+            </cards>
+        </player>
+   </players>
+
+   <sponsors>
+        <sponsor local="yes">
+            <name>Przyłęki</name>
+            <residence>Bydgoszcz,Polska</residence>
+        </sponsor>
+   </sponsors>
+
+   <photos>
+        <image source=""></image>
+   </photos>
+
+   <about>
+        <yearFounded>2018</yearFounded>
+        <address privateField="yes">
+            <street>Zabytkowa 8</street>
+            <city>Przyłęki</city>
+            <province>Kujawsko-Pomorskie</province>
+        </address>
+        <league>B Klasa</league>
+   </about>
+
+</websiteData>

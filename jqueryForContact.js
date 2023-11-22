@@ -1,6 +1,6 @@
 const locationButton = document.getElementById('getLocation');
-const locationText=documnet.getElementById('infoStadium')
-locationButton.style.display='block';
+const locationText=document.getElementById('infoStadium');
+locationButton.style.display='inline';
 locationText.style.display='block';
 $(document).ready(function() {
     var countClicks=0;
