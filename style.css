@@ -253,6 +253,12 @@ td:first-child {
     object-fit: cover;
 }
 
+.mainContent .galleryColumn img{
+    float:left;
+    width: 100%;
+    height: 400px;
+}
+
 .mainContent .mainContentText {
     margin:2%;
     width:50%;
