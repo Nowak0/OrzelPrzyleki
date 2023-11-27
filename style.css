@@ -445,12 +445,10 @@ footer p {
     }
 }
 
-@media only screen and (max-width: 500px) {
-
-}
-
 @media (max-width:700px) {
-    body,nav a, .subnavHeader, .subnavContent,#standingsText,.formButtons,#goLeft,#goRight{
+    body,nav a, .subnavHeader, .subnavContent,#standingsText,.formButtons,#goLeft,#goRight,
+    .formRow .inputData label, .formRow .inputData select,.inputData input:focus ~ label, .textarea textarea:focus ~ label,
+    .inputData input:valid ~ label, .textarea textarea:valid ~ label, .player p, .formButtons .inputData input, .formRow .inputData .chooseFile{
         font-size: 11px;
     }
     nav li {
@@ -472,8 +470,18 @@ footer p {
     form .formRow .inputData{
         margin: 35px 0!important;
     }
-    .formButtons .inputData {
+    .formButtons .inputData{
         width: 40%!important;
+    }
+    .inputData input, .inputData select {
+        height: 200%;
+    }
+    .textarea textarea {
+        font-size: 11px;
+        width:80%
+    }
+    #seniorTeam, #juniorTeam {
+        height:100%;
     }
     .mainContent {
         display: block;
@@ -497,8 +505,5 @@ footer p {
     }
     .player img {
         height:200px;
-    }
-    .player p {
-        font-size: 11px;
     }
 }
