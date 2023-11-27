@@ -127,24 +127,20 @@
             <xs:element name="wins" type="xs:unsignedInt" minOccurs="1" maxOccurs="1" />
             <xs:element name="draws" type="xs:unsignedInt" minOccurs="1" maxOccurs="1"/>
             <xs:element name="loses" type="xs:unsignedInt" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="goals" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="goals" type="goalsType" minOccurs="1" maxOccurs="1"/>
             <xs:element name="resultsHome" type="xs:string" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="goalDifferentialHome" minOccurs="1" maxOccurs="1"> 
-                <xs:simpleType>
-                    <xs:restriction base="setGoalsListLength"/>
-                </xs:simpleType>
-            </xs:element>
+            <xs:element name="goalDifferentialHome" type="goalsType" minOccurs="1" maxOccurs="1"/>
             <xs:element name="resultsAway" type="xs:string" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="goalDifferentialAway" minOccurs="1" maxOccurs="1"> 
-                <xs:simpleType>
-                    <xs:restriction base="setGoalsListLength"/>
-                </xs:simpleType>
-            </xs:element>
+            <xs:element name="goalDifferentialAway" type="goalsType" minOccurs="1" maxOccurs="1"/> 
             <xs:group ref="imageAndLink"/>
         </xs:sequence>
         <xs:attributeGroup ref="team"/>
         <xs:attribute name="streak" use="optional"/>
     </xs:complexType>
+
+    <xs:simpleType name="goalsType">
+        <xs:restriction base="setGoalsListLength"/>
+    </xs:simpleType>
 
     <xs:complexType name="attachmentType">
         <xs:simpleContent>
@@ -216,7 +212,7 @@
     <xs:simpleType name="shortStringType">
         <xs:restriction base="xs:string">
             <xs:minLength value="1"/>
-            <xs:maxLength value="20"/>
+            <xs:maxLength value="25"/>
         </xs:restriction>
     </xs:simpleType>
 

@@ -1,5 +1,0 @@
-
-number of global simpleType:
-    - 5
-number of local simpleType:
-    - 4
