@@ -2,7 +2,7 @@ body {
     background-color: whitesmoke;
     text-align:center;
     margin:auto;
-    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     width:100%;
     align-items: center;
     justify-content: center;
@@ -57,6 +57,7 @@ nav {
 
 nav ul {
     margin: 0;
+    margin-right:2vw;
     padding: 0;
 }
 
@@ -83,7 +84,6 @@ nav a:hover, .subnav:hover .subnavHeader{
     color: black;
     padding: 10px 15px;
     background-color: #dfcfbe;
-    font-family: 'Barlow Semi Condensed', sans-serif;
     margin: 0;
   } 
 
@@ -120,18 +120,30 @@ nav a:hover, .subnav:hover .subnavHeader{
     object-fit: cover;
     animation-name: fade;
     animation-duration:2.5s;
-    filter: brightness(60%);
+    filter: brightness(40%);
 }
 
-#sliderText { 
+.sliderItems { 
     color:white;
     position: absolute;
     width:100%;
     top:12vw;
-    text-align: center;
+    text-align: left;
+    left:10%;
+    width:90%;
     font-size: 5vw;
-    animation-name: fade;
-    animation-duration:2.5s;
+    animation-name: slidein;
+    animation-duration:1.5s;
+}
+
+#smallSliderText {
+    position:absolute;
+    top:1vw;
+    font-size: 30%;
+}
+
+#sliderButton {
+    bottom:5vw;
 }
 
 #goRight, #goLeft {
@@ -188,7 +200,7 @@ nav a:hover, .subnav:hover .subnavHeader{
 }
 
 #standings {
-    display: none;
+    display: block;
     text-align:center;
     padding-bottom:2vw;
     margin-top: 2vw;
@@ -444,6 +456,18 @@ footer p {
         opacity:100%;
     }
 }
+
+@keyframes slidein {
+    from {
+      margin-top: 10%; /* Start off the screen */
+      filter: brightness(5%);
+    }
+  
+    to {
+      margin-top: 0; /* Slide in to the left */
+      opacity:100%;
+    }
+  }
 
 @media (max-width:700px) {
     body,nav a, .subnavHeader, .subnavContent,#standingsText,.formButtons,#goLeft,#goRight,

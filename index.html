@@ -26,26 +26,51 @@
           </li>
           <li>
             <div class="subnav">
-              <a class="subnavHeader">Druzyna &#8595;</a>
+              <a class="subnavHeader">Seniorzy &#8595;</a>
               <div class="subnavContent">
                 <a href="zawodnicy.html">Zawodnicy</a>
-                <a href="https://www.facebook.com/OrzelPrzyleki" target="_blank">Nasz Facebook</a>
+                <a href="">Galeria</a>
+                <a href="">Terminarz</a>
               </div>
             </div>
           </li>
           <li>
-            <a href="kontakt.html">Kontakt</a>
+            <div class="subnav">
+              <a class="subnavHeader">Akademia &#8595;</a>
+              <div class="subnavContent">
+                <a href="">Skrzaty</a>
+                <a href="">Galeria</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="subnav">
+              <a class="subnavHeader">Współpraca &#8595;</a>
+              <div class="subnavContent">
+                <a href="kontakt.html">Kontakt</a>
+                <a href="https://www.facebook.com/OrzelPrzyleki" target="_blank">Nasz Facebook</a>
+                <a href="">Sponsorzy</a>
+                <a href="">Gmina Białe Błota</a>
+              </div>
+            </div>
           </li>
         </ul>
       </nav>
     </header>
     <div class="main" id="main">
+      <div class="slider">
+        <img src="pics/rozgrzewkaSlider.jpeg" alt="zdjecie naglowkowe 1" class="sliderImg" id="sliderImg">
+        <div class="sliderItems" id="sliderItems">
+          <p id="smallSliderText">Drużyna Seniorów</p>
+          <p id="bigSliderText">Zawsze walczymy do końca!<br> Dołącz do nas</p>
+          <button id="sliderButton" onclick=sliderButtonAction()>terminarz</button>
+        </div>
+        <button id="goLeft">&#129028;</button>
+        <button id="goRight">&#129030;</button>
+      </div>
       <div id='publishFetch'>
         <p id="standings"> 
           <button onclick=getStandings()>Pobierz aktualną tabelę wyników</button>
-        </p>
-        <p id="JSnotworking">
-          JavaScript nie działa lub nie jest włączony
         </p>
       </div>
       <div class="mainContent">
