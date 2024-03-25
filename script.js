@@ -7,7 +7,7 @@ function startTimeout() {
 
 
 function resetAnimation() {
-    const image=document.getElementById('sliderImg');
+    const image = document.getElementById('sliderImg');
     const text = document.getElementById('sliderItems');
     image.style.animation='none';
     image.offsetHeight;
@@ -34,53 +34,12 @@ function sliderButtonsFunctions() {
 }
 
 
-function addSlider() {
-    const divFetch = document.getElementById('publishFetch');
-    const divMain = document.getElementById('main');
-    const divSlider = document.createElement('div');
-    const image = document.createElement('img');
-    const createText = document.createElement('p');
-    createText.innerHTML="Zawsze walczymy do końca!<br> Dołącz do nas!"
-    const goRight = document.createElement('button');
-    const goLeft = document.createElement('button');
-    goLeft.innerHTML='&#129028;';
-    goRight.innerHTML='&#129030;';
-    divSlider.classList.add('slider');
-    createText.classList.add('sliderText');
-    image.classList.add('sliderImg');
-    createText.setAttribute('id','sliderText');
-    goLeft.setAttribute('id','goLeft');
-    goRight.setAttribute('id','goRight');
-    image.setAttribute('id','sliderImg')
-    image.setAttribute('src', 'pics/rozgrzewkaSlider.jpeg');
-    image.setAttribute('alt', 'zdjecie naglowkowe 1');
-    goLeft.onclick = function() {
-        if(countClicksSlider>=2) {countClicksSlider-=2;}
-        else if(countClicksSlider>3) {countClicksSlider=0;}
-        else {countClicksSlider+=1;}
-        changeSlider();
-    }
-    goRight.onclick = function() {
-        changeSlider();
-    }
-    divSlider.appendChild(image);
-    divSlider.appendChild(createText);
-    divSlider.appendChild(goLeft);
-    divSlider.appendChild(goRight);
-    divMain.insertBefore(divSlider, divFetch);
-    startTimeout();
-}
-
-
-//addSlider();
-
-
 function changeSlider() {
     countClicksSlider+=1;
-    const image = document.getElementById('sliderImg');
-    const smallText = document.getElementById('smallSliderText');
-    const bigText = document.getElementById('bigSliderText');
-    const button = document.getElementById('sliderButton');
+    let image = document.getElementById('sliderImg');
+    let smallText = document.getElementById('smallSliderText');
+    let bigText = document.getElementById('bigSliderText');
+    let button = document.getElementById('sliderButton');
 
     clearTimeout(timeout);
     resetAnimation();
@@ -128,7 +87,8 @@ function scrollFunction() {
 
 function sliderButtonAction() {
     if (countClicksSlider == 1) {
-        window.location.href="";
+        const standings = document.getElementById("standings");
+        window.location.href="#" + standings.id;
     }
     if (countClicksSlider == 2) {
         window.location.href="";

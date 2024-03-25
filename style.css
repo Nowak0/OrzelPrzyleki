@@ -441,9 +441,10 @@ footer {
     border-top: 2px solid rgba(157, 157, 157, 0.67);
     padding-top: 22px;
     padding-bottom: 22px;
-    text-align: center;
     margin-top:2vw;
+    text-align: center;
 }
+
 footer p {
     margin:0;
 }
@@ -529,5 +530,8 @@ footer p {
     }
     .player img {
         height:200px;
+    }
+    footer {
+        margin-top:60vw;
     }
 }
