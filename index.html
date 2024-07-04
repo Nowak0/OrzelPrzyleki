@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Orzeł Przyłęki</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href='https://fonts.googleapis.com/css?family=Barlow Semi Condensed' rel='stylesheet'>
@@ -15,7 +15,7 @@
   <body>
     <header>
       <div class="logo">
-        <a href="index.html">
+        <a href="html/index.html">
           <img src="pics/png_logo.png" alt="logo Orzeł Przyłęki"/>
         </a>
       </div>
@@ -34,7 +34,7 @@
             <div class="subnav">
               <a class="subnavHeader">Akademia &#8595;</a>
               <div class="subnavContent">
-                <a href="">Skrzaty</a>
+                <a href="subPageTemplate.html">Skrzaty</a>
                 <a href="">Galeria</a>
               </div>
             </div>
@@ -64,12 +64,6 @@
         <button id="goLeft">&#129028;</button>
         <button id="goRight">&#129030;</button>
       </div>
-      <div id="publishFetch">
-        <p id="standings" style="display:none"> 
-          <button onclick=getStandings()>Pobierz aktualną tabelę wyników</button>
-        </p>
-      </div>
-      <br>
       <div class="mainContent">
         <div class="mainContentText">
           <h6>Nasz klub</h6>
@@ -82,13 +76,12 @@
         </div>
         <img src="pics/rozgrzewka2.jpeg" alt="zawodnicy podczas rozgrzewki">
       </div>
-     
       <a id="goToTop" href="#top">&#129029;</a>
     </div>
     <footer id="mainFooter">
       <p>Copyright &copy; 2024</p>
     </footer>
-    <script src="script.js" defer></script>
-    <script src="slider.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/slider.js" defer></script>
   </body>
 </html>

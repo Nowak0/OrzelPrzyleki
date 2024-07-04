@@ -1,6 +1,6 @@
 window.onscroll = function() {
     scrollFunction();
-    if($(window).scrollTop() > 200) {
+    if($(window).scrollTop() > 50) {
         $("header").addClass("activeScroll");
         $(".subnavHeader").addClass("activeScroll");
     } else {
@@ -11,12 +11,14 @@ window.onscroll = function() {
 
 
 function scrollFunction() {
-    const goToTop = document.getElementById('goToTop');
+    let goToTop = document.getElementById('goToTop');
     if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
         goToTop.style.display = 'block';
     }
     else {
-        goToTop.style.display = 'none';
+        if(goToTop) {
+            goToTop.style.display = 'none';
+        }
     }
 }
 
@@ -26,7 +28,7 @@ $(document).ready(function(){
         if(this.hash!=='') {
             $('html, body').animate({
                 scrollTop: 0
-            }, 800);
+            }, 0);
         }
     });
   });

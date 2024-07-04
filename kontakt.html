@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Orzeł Przyłęki</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href='https://fonts.googleapis.com/css?family=Barlow Semi Condensed' rel='stylesheet'>
@@ -55,9 +55,12 @@
       </nav>
     </header>
     <div class="main">
+      <p id="stadium"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2398.92867997004!2d17.967800776972595!3d53.039619097629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47036d08c3098821%3A0x320bc19573e6de5f!2zRXN0YWRpbyBPcnplxYIgUHJ6ecWCxJlraQ!5e0!3m2!1sen!2spl!4v1697907221994!5m2!1sen!2spl" 
+        width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade"></iframe></p>
       <div class="formContainer">
         <p id="contactInfo">Skontaktuj się z nami!</p>
-        <form action="" method="post">
+        <form action="https://formsubmit.co/psscarpeta@gmail.com" method="post">
           <div class="formRow">
             <div class="inputData">
               <input type="text" name="firstName" id="firstName" required>
@@ -70,23 +73,11 @@
           </div>
           <div class="formRow">
             <div class="inputData">
-              <input type="text" name="todayDate" id="todayDate" required>
-              <label for="todayDate">Dzisiejsza data: </label>
-            </div>
-            <div class="inputData">
               <input type="text" name="email" id="email" required>
               <label for="email">Email: </label>
             </div>
           </div>
           <div class="formRow">
-            <div class="inputData">
-              <input type="radio" name="pickTeam" value="seniorTeam" id="seniorTeam" checked>
-              <label for="seniorTeam">Drużyna seniorów </label>
-            </div>
-            <div class="inputData">
-              <input type="radio" name="pickTeam" value="juniorTeam" id="juniorTeam">
-              <label for="juniorTeam">Drużyna juniorów </label>
-            </div>
             <div class="inputData">
               <select name="topic" id="topic">
                 <option value="0">Temat wiadomości</option>
@@ -103,12 +94,6 @@
               <label for="message">Napisz wiadomość</label>
             </div>
           </div>
-          <br><br><br>
-          <div class="formRow">
-            <div class="inputData chooseFile">
-              <input type="file" name="file">
-            </div>
-          </div>
           <div class="formRow formButtons">
             <div class="inputData">
               <input type="submit" id='submit' value="Wyślij">
@@ -117,17 +102,15 @@
               <input type="reset" id='reset' value="Usuń">
             </div>
           </div>
+          <div class="formRow">
+          </div>
         </form>
       </div>
-      <p id="infoStadium">Na mapie możesz znaleźć lokalizację naszego stadionu</p>
-      <p id="stadium"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2398.92867997004!2d17.967800776972595!3d53.039619097629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47036d08c3098821%3A0x320bc19573e6de5f!2zRXN0YWRpbyBPcnplxYIgUHJ6ecWCxJlraQ!5e0!3m2!1sen!2spl!4v1697907221994!5m2!1sen!2spl" 
-        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade"></iframe></p>
     </div>
     <footer>
       <p>Copyright &copy; 2024</p>
     </footer>
-    <script src="script.js" defer></script>
-    <script src="jqueryForContact.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/jqueryForContact.js" defer></script>
   </body>
 </html>

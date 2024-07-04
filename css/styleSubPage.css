@@ -1,0 +1,309 @@
+body {
+    background-color: white;
+    text-align:center;
+    margin:auto;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+    color:  #254636;
+    transition: all 0.3s ease;
+}
+
+a:visited {
+    color:#00B977;
+}
+
+
+img {
+    max-width: 100%;
+    height:auto;
+}
+
+header {
+    background-color: whitesmoke;
+    position:sticky;
+    top:0;
+    display:flex;
+    align-items: center;
+    padding: 0.2vw;
+    padding-right:0.4vw;
+    justify-content: space-between;
+    z-index: 99;
+}
+
+button {
+    display: inline-block;
+	padding: 0.7vw 1.4vw;
+	color: #fff;
+    border:none;
+	text-transform: uppercase;
+	letter-spacing: .10rem;
+	transition: all .3s;
+	position: relative;
+	overflow: hidden;
+    background-color: #00B977;
+    /* box-shadow: 0 2px 25px rgba(0, 255, 221, 0.5); */
+    cursor: pointer;
+}
+
+a, td a {
+    text-decoration: none;
+}
+
+
+
+button:hover {
+    background-color: #254636;
+    transition: 1s ease;
+}
+
+.logo a,
+.logo img {
+    height:6vw;
+    width:9vw;
+}
+
+nav {
+    overflow:hidden;
+}
+
+nav ul {
+    margin: 0;
+    margin-right:2vw;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-top:0;
+}
+nav a {
+    text-decoration: none;
+    color: #000;
+    padding: 10px 15px;
+    font-size: 1vw;
+    display: block;
+}
+
+nav a:hover, .subnav:hover .subnavHeader{
+    background-color: #254636;
+    color: white;
+}  
+  
+.subnavHeader {
+    font-size: 1vw; 
+    border: none;
+    color: black;
+    padding: 10px 15px;
+    background-color: whitesmoke;
+    margin: 0;
+  } 
+
+.subnavContent {
+    display: none;
+    position:absolute;
+    background-color: #254636;
+    min-width: 8vw;
+  }
+
+
+.subnavContent a {
+    color:white;
+    text-align: left;
+  } 
+
+
+.subnavContent a:hover {
+    color:lightskyblue;
+}
+
+.subnav:hover .subnavContent {
+    display: block;
+}
+
+.slider {
+    overflow: hidden;
+}
+
+.slider img {
+    width: 100%;
+    display: block; 
+}
+
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: whitesmoke;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.01);
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+article {
+    width: 70%;
+    padding: 30px;
+}
+
+ 
+aside {
+    width: 30%;
+    padding: 20px;
+    /* background-color: #31be488f; */
+    background-color: lightgray;
+    border-left: 2px solid rgba(157, 157, 157, 0.67);
+}
+
+.widget {
+    margin-bottom: 30px;
+}
+
+.widget p {
+    text-align: left;
+}
+
+h2, .widget h4 {
+    color:#00B977;
+}
+
+.widget a:visited {
+    color:darkgreen;
+}
+
+h1, .widget h3 {
+    color:#254636;
+}
+
+.widget:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.widget li {
+    margin-bottom: 15px;
+}
+
+.widget img {
+    float: left;
+    margin: 0 12px 5px 0;
+}
+
+.widget ul {
+    list-style-type: square;
+    padding: 0 0 0 18px;
+    margin: 0;
+}
+
+
+#goToTop {
+    display: none;
+    position: fixed;
+    bottom: 1vw;
+    right: 1vw;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #00B977;
+    color: white;
+    padding: 0.5vw;
+    border-radius: 0.5vw;
+    font-size: 1.5vw;
+    text-decoration: none;
+}
+
+#goToTop:hover {
+    background-color: #254636;
+}
+
+.activeScroll {
+    background-color: rgb(55, 146, 85);
+    animation-name: fade;
+    animation-duration:0.5s;
+}
+
+
+footer {
+    background-color:darkgray;
+    color: black;
+    border-top: 2px solid rgba(157, 157, 157, 0.67);
+    padding-top: 22px;
+    padding-bottom: 22px;
+    text-align: center;
+}
+
+footer p {
+    margin:0;
+}
+
+@keyframes fade {
+    from {
+        filter: brightness(10%);
+    }
+    to {
+        opacity:100%;
+    }
+}
+
+@media (max-width: 700px) {
+
+    body,nav a, .subnavHeader, .subnavContent {
+        font-size: 11px;
+    }
+
+    nav li {
+        display: block;
+    }
+
+    .logo img{
+        width: 90px;
+        height:70px;
+    }
+
+    .main {
+        flex-direction: column;
+    }
+
+    article, aside{
+        width: 100%;
+        padding: 0;
+    }
+
+    article h1, article h2 {
+        text-align: center;
+    }  
+
+    article img {
+        display: block;
+        width: 100%;
+        margin: 30px auto;
+    }
+
+    aside {
+        border: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider {
+        display: none;
+    }
+
+    article h1 {
+        margin-top: 0;
+    }
+}
+
+
+
