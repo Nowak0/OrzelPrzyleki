@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Orzeł Przyłęki</title>
-    <link rel="stylesheet" href="css/styleAll.css">
-    <link rel="stylesheet" href="css/styleSubPage.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href='https://fonts.googleapis.com/css?family=Barlow Semi Condensed' rel='stylesheet'>
@@ -44,7 +43,7 @@
             <div class="subnav">
               <a class="subnavHeader">Współpraca &#8595;</a>
               <div class="subnavContent">
-                <a href="contact.html">Kontakt</a>
+                <a href="kontakt.html">Kontakt</a>
                 <a href="https://www.facebook.com/OrzelPrzyleki" target="_blank">Nasz Facebook</a>
                 <a href="">Sponsorzy</a>
                 <a href="">Gmina Białe Błota</a>
@@ -54,7 +53,7 @@
         </ul>
       </nav>
     </header>
-    <div class="container">
+    <div class="main" id="main">
       <div class="slider">
         <img src="pics/rozgrzewkaSlider.jpeg" alt="zdjecie naglowkowe 1" class="sliderImg" id="sliderImg">
         <div class="sliderItems" id="sliderItems">
@@ -65,8 +64,8 @@
         <button id="goLeft">&#129028;</button>
         <button id="goRight">&#129030;</button>
       </div>
-      <div class="main">
-        <div class="halfArticle">
+      <div class="mainContent">
+        <div class="mainContentText">
           <h6>Nasz klub</h6>
           <h2>Orły to my!</h2>
           <p>W 2018 znaleźliśmy się na piłkarskiej mapie województwa kujawsko-pomorskiego. 
@@ -78,16 +77,19 @@
           <button id="BialeBlota">Gmina Biale Blota</button>
           <button id="Sponsors">Sponsorzy</button>
         </div>
-        <div class="halfAside" style="padding:0;">
-          <img src="pics/rozgrzewka2.jpeg" alt="zawodnicy podczas rozgrzewki">
+        <img src="pics/rozgrzewka2.jpeg" alt="zawodnicy podczas rozgrzewki">
+      </div>
+      <div class="mainContent">
+        <div class="mainContentText">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, sit.</p>
         </div>
       </div>
-      <a class="goToTop" href="#top">&#129029;</a>
-      <footer id="mainFooter">
-        <p>Copyright &copy; 2024</p>
-      </footer>
+      <a id="goToTop" href="#top">&#129029;</a>
     </div>
-    <script src="js/scrollTop.js" defer></script>
+    <footer id="mainFooter">
+      <p>Copyright &copy; 2024</p>
+    </footer>
+    <script src="js/script.js" defer></script>
     <script src="js/slider.js" defer></script>
   </body>
 </html>

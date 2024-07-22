@@ -1,138 +1,87 @@
-body {
-    background-color: white;
-    text-align:center;
-    margin:auto;
-    font-family: 'Barlow Semi Condensed', sans-serif;
-    width:100%;
-    align-items: center;
-    justify-content: center;
-}
-
-a {
-    text-decoration: none;
-    color:  #254636;
-    transition: all 0.3s ease;
-}
-
-a:visited {
-    color:#00B977;
-}
-
-
-img {
-    max-width: 100%;
-    height:auto;
-}
-
-header {
-    background-color: whitesmoke;
-    position:sticky;
-    top:0;
-    display:flex;
-    align-items: center;
-    padding: 0.2vw;
-    padding-right:0.4vw;
-    justify-content: space-between;
-    z-index: 99;
-}
-
-button {
-    display: inline-block;
-	padding: 0.7vw 1.4vw;
-	color: #fff;
-    border:none;
-	text-transform: uppercase;
-	letter-spacing: .10rem;
-	transition: all .3s;
-	position: relative;
-	overflow: hidden;
-    background-color: #00B977;
-    /* box-shadow: 0 2px 25px rgba(0, 255, 221, 0.5); */
-    cursor: pointer;
-}
-
-a, td a {
-    text-decoration: none;
-}
-
-
-
-button:hover {
-    background-color: #254636;
-    transition: 1s ease;
-}
-
-.logo a,
-.logo img {
-    height:6vw;
-    width:9vw;
-}
-
-nav {
-    overflow:hidden;
-}
-
-nav ul {
-    margin: 0;
-    margin-right:2vw;
-    padding: 0;
-}
-
-nav li {
-    display: inline-block;
-    margin-top:0;
-}
-nav a {
-    text-decoration: none;
-    color: #000;
-    padding: 10px 15px;
-    font-size: 1vw;
-    display: block;
-}
-
-nav a:hover, .subnav:hover .subnavHeader{
-    background-color: #254636;
-    color: white;
-}  
-  
-.subnavHeader {
-    font-size: 1vw; 
-    border: none;
-    color: black;
-    padding: 10px 15px;
-    background-color: whitesmoke;
-    margin: 0;
-  } 
-
-.subnavContent {
-    display: none;
-    position:absolute;
-    background-color: #254636;
-    min-width: 8vw;
-  }
-
-
-.subnavContent a {
-    color:white;
-    text-align: left;
-  } 
-
-
-.subnavContent a:hover {
-    color:lightskyblue;
-}
-
-.subnav:hover .subnavContent {
-    display: block;
-}
-
 .slider {
+    position: relative; 
     overflow: hidden;
 }
 
-.slider img {
-    width: 100%;
-    display: block; 
+
+#sliderImg {
+    width:100%;
+    height:42vw;
+    object-fit: cover;
+    animation-name: fade;
+    animation-duration:2.5s;
+    filter: brightness(40%);
+}
+
+.sliderItems { 
+    color:white;
+    position: absolute;
+    width:100%;
+    top:12vw;
+    text-align: left;
+    left:10%;
+    width:90%;
+    font-size: 5vw;
+    animation-name: slidein;
+    animation-duration:1.5s;
+}
+
+#smallSliderText {
+    position:absolute;
+    top:1vw;
+    font-size: 30%;
+}
+
+#sliderButton {
+    bottom:5vw;
+}
+
+#goRight, #goLeft {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    height:auto;
+    margin-top: -22px;
+    padding: 14px;
+    background-color: lightgrey;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5vw;
+    transition: 0.5s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    opacity:50%;
+}
+
+#goRight {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+#goLeft {
+    left:0;
+}
+
+#goLeft:hover, #goRight:hover {
+    opacity:100%;
+    color:white;
+    background-color: darkgrey;
+}
+
+#sliderContactButton {
+    cursor: pointer;
+    position: absolute;
+    top: -15vw;
+    width: auto;
+    padding: 16px;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5vw;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    z-index:90;
 }
 
 
@@ -140,7 +89,7 @@ nav a:hover, .subnav:hover .subnavHeader{
     max-width: 100%;
     margin: 0 auto;
     background-color: whitesmoke;
-    border: 1px solid #e1e1e1;
+    border: 1px solid rgba(157, 157, 157, 0.67);
     border-radius: 5px;
     box-shadow: 0 0 35px rgba(0, 0, 0, 0.01);
 }
@@ -153,16 +102,40 @@ nav a:hover, .subnav:hover .subnavHeader{
 
 article {
     width: 70%;
-    padding: 30px;
 }
 
- 
+.halfArticle {
+    width: 50%;
+    text-align: left;
+    margin-left: 20px;
+}
+
+article, .halfArticle, .fullArticle {
+    padding: 30px;
+    font-size: 120%;
+}
+
+article button, .halfArticle button, .fullArticle button {
+    margin-top: 2vw;
+    margin-right: 0.5vw;
+} 
+
 aside {
     width: 30%;
     padding: 20px;
-    /* background-color: #31be488f; */
     background-color: lightgray;
     border-left: 2px solid rgba(157, 157, 157, 0.67);
+}
+
+.halfAside {
+    width: 50%;
+    padding: 20px;
+    background-color: lightgray;
+    border-left: 2px solid rgba(157, 157, 157, 0.67);
+}
+
+.halfAside img {
+    height: 100%;
 }
 
 .widget {
@@ -171,6 +144,10 @@ aside {
 
 .widget p {
     text-align: left;
+}
+
+h6::first-line {
+    color:#254636;
 }
 
 h2, .widget h4 {
@@ -202,12 +179,12 @@ h1, .widget h3 {
 
 .widget ul {
     list-style-type: square;
+    list-style-position: inside;
     padding: 0 0 0 18px;
     margin: 0;
 }
 
-
-#goToTop {
+.goToTop {
     display: none;
     position: fixed;
     bottom: 1vw;
@@ -223,74 +200,38 @@ h1, .widget h3 {
     text-decoration: none;
 }
 
-#goToTop:hover {
+.goToTop:hover {
     background-color: #254636;
 }
 
-.activeScroll {
-    background-color: rgb(55, 146, 85);
-    animation-name: fade;
-    animation-duration:0.5s;
-}
-
-
-footer {
-    background-color:darkgray;
-    color: black;
-    border-top: 2px solid rgba(157, 157, 157, 0.67);
-    padding-top: 22px;
-    padding-bottom: 22px;
-    text-align: center;
-}
-
-footer p {
-    margin:0;
-}
-
-@keyframes fade {
-    from {
-        filter: brightness(10%);
-    }
-    to {
-        opacity:100%;
-    }
-}
 
 @media (max-width: 700px) {
-
-    body,nav a, .subnavHeader, .subnavContent {
-        font-size: 11px;
-    }
-
-    nav li {
-        display: block;
-    }
-
-    .logo img{
-        width: 90px;
-        height:70px;
-    }
-
     .main {
         flex-direction: column;
     }
 
-    article, aside{
-        width: 100%;
+    article, aside, .halfAside, .halfArticle, .fullArticle{
+        margin: 0;
         padding: 0;
+        width: 100%;
+        text-align: center;
     }
 
-    article h1, article h2 {
+    article button, .halfArticle button, .fullArticle button {
+        margin-bottom:4vw;
+    }
+
+    article h1, article h2, .halfArticle h1, .halfArticle h2, .fullArticle h1, .fullArticle h2 {
         text-align: center;
     }  
 
-    article img {
+    article img, .halfArticle img, .fullArticle img {
         display: block;
         width: 100%;
         margin: 30px auto;
     }
 
-    aside {
+    aside, .halfAside {
         border: 0;
     }
 }
@@ -300,10 +241,7 @@ footer p {
         display: none;
     }
 
-    article h1 {
+    h1 {
         margin-top: 0;
     }
 }
-
-
-
