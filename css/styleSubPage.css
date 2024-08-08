@@ -1,6 +1,10 @@
 .slider {
     position: relative; 
-    overflow: hidden;
+    overflow: hidden;   
+}
+
+.slider img {
+    width: 100%;
 }
 
 
@@ -89,14 +93,14 @@
     max-width: 100%;
     margin: 0 auto;
     background-color: whitesmoke;
-    border: 1px solid rgba(157, 157, 157, 0.67);
-    border-radius: 5px;
+    
     box-shadow: 0 0 35px rgba(0, 0, 0, 0.01);
 }
 
 .main {
     display: flex;
     justify-content: space-between;
+    margin-top: 100px;
 }
 
 
@@ -107,7 +111,7 @@ article {
 .halfArticle {
     width: 50%;
     text-align: left;
-    margin-left: 20px;
+    margin-left: 50px;
 }
 
 article, .halfArticle, .fullArticle {
@@ -129,13 +133,7 @@ aside {
 
 .halfAside {
     width: 50%;
-    padding: 20px;
-    background-color: lightgray;
-    border-left: 2px solid rgba(157, 157, 157, 0.67);
-}
-
-.halfAside img {
-    height: 100%;
+    background-color: whitesmoke;
 }
 
 .widget {
@@ -147,7 +145,19 @@ aside {
 }
 
 h6::first-line {
-    color:#254636;
+    color:#5b56a3;
+}
+
+h1 {
+    font-size: 250%;
+}
+
+h2 {
+    font-size: 200%;
+}
+
+h4 {
+    color:rgb(206, 137, 9);
 }
 
 h2, .widget h4 {
