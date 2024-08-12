@@ -250,4 +250,8 @@ footer p {
     td {
        padding-bottom: 20px;
     }
+
+    button {
+        padding: 2vw 2.8vw;
+    }
 }

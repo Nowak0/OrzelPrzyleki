@@ -236,7 +236,7 @@ h1, .widget h3 {
 @media (max-width: 700px) {
     .main {
         flex-direction: column;
-        margin-top:20px;
+        margin-top:10px;
     }
 
     .line-box {
@@ -247,9 +247,14 @@ h1, .widget h3 {
 
     article, aside, .halfAside, .halfArticle, .fullArticle{
         margin: 0;
-        padding:5vw 2vw 0 2vw;
+        padding:0;
         width: 100%;
         text-align: center;
+    }
+
+    article p, aside p, .halfAside p, .halfArticle p, .fullArticle p {
+        padding-left: 2vw;
+        padding-right: 2vw;
     }
 
     article button, .halfArticle button, .fullArticle button {
@@ -269,9 +274,17 @@ h1, .widget h3 {
     aside, .halfAside {
         border: 0;
     }
+
+    .goToTop {
+        padding: 1.5vw;
+        font-size: 200%;
+    }
 }
 
 @media (max-width: 480px) {
+    .main {
+        margin-top: 50px;
+    }
     .slider {
         display: none;
     }
