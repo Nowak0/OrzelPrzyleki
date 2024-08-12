@@ -240,6 +240,7 @@ h1, .widget h3 {
     article, aside, .halfAside, .halfArticle, .fullArticle{
         margin: 0;
         padding: 0;
+        padding-top: 5vw;
         width: 100%;
         text-align: center;
     }
