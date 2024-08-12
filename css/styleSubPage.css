@@ -23,6 +23,7 @@
     width:100%;
     top:12vw;
     text-align: left;
+    text-transform: uppercase;
     left:10%;
     width:90%;
     font-size: 5vw;
@@ -34,6 +35,10 @@
     position:absolute;
     top:1vw;
     font-size: 30%;
+}
+
+#bigSliderText {
+    font-weight: bold;
 }
 
 #sliderButton {
@@ -160,6 +165,10 @@ h4 {
     color:rgb(206, 137, 9);
 }
 
+h1,h2,h3,h4 {
+    text-transform: uppercase;
+}
+
 h2, .widget h4 {
     color:#00B977;
 }
@@ -220,8 +229,7 @@ h1, .widget h3 {
     background-color: rgb(206, 137, 9);
     margin-top: 20px;
     margin-bottom:40px;
-    transform: skewX(-20deg); /* Skews the line to create the parallelogram effect */
-    transform-origin: left center; /* Ensures the slant is from the left */ 
+    transform: skewX(-20deg);
 }
 
 
@@ -239,8 +247,7 @@ h1, .widget h3 {
 
     article, aside, .halfAside, .halfArticle, .fullArticle{
         margin: 0;
-        padding: 0;
-        padding-top: 5vw;
+        padding:5vw 2vw 0 2vw;
         width: 100%;
         text-align: center;
     }
