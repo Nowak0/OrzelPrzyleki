@@ -130,6 +130,35 @@ nav a:hover, .subnav:hover .subnavHeader{
     display: block;
 }
 
+h6::first-line {
+    color:#5b56a3;
+}
+
+h1 {
+    font-size: 250%;
+    color:#254636;
+}
+
+h2 {
+    font-size: 200%;
+}
+
+h3 {
+    color: rgb(15, 134, 74);
+}
+
+h4 {
+    color:rgb(206, 137, 9);
+}
+
+h1,h2,h3,h4 {
+    text-transform: uppercase;
+}
+
+h2, .widget h4 {
+    color:#00B977;
+}
+
 .goToTop {
     display: none;
     position: fixed;
@@ -190,6 +219,14 @@ tr td::first-line {
 
 tr:last-child td::after {
     display: none;
+}
+
+.sponsorStripe {
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    margin-top:5vw;
+    margin-bottom:5vw;
 }
 
 footer {
@@ -253,5 +290,11 @@ footer p {
 
     button {
         padding: 2vw 2.8vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .sponsorStripe {
+        margin-bottom:7vw;
     }
 }

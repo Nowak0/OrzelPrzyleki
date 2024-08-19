@@ -113,6 +113,10 @@ article {
     width: 70%;
 }
 
+.fullArticle {
+    width: 100%;
+}
+
 .halfArticle {
     width: 50%;
     text-align: left;
@@ -149,36 +153,8 @@ aside {
     text-align: left;
 }
 
-h6::first-line {
-    color:#5b56a3;
-}
-
-h1 {
-    font-size: 250%;
-}
-
-h2 {
-    font-size: 200%;
-}
-
-h4 {
-    color:rgb(206, 137, 9);
-}
-
-h1,h2,h3,h4 {
-    text-transform: uppercase;
-}
-
-h2, .widget h4 {
-    color:#00B977;
-}
-
 .widget a:visited {
     color:darkgreen;
-}
-
-h1, .widget h3 {
-    color:#254636;
 }
 
 .widget:after {
@@ -236,7 +212,6 @@ h1, .widget h3 {
 @media (max-width: 700px) {
     .main {
         flex-direction: column;
-        margin-top:10px;
     }
 
     .line-box {
@@ -249,6 +224,7 @@ h1, .widget h3 {
         margin: 0;
         padding:0;
         width: 100%;
+        padding-top: 10px;
         text-align: center;
     }
 
