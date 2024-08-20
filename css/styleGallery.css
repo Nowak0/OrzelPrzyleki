@@ -4,7 +4,7 @@ html:not(.touch) .gallery-image figcaption, .touch .gallery-image figcaption, .m
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  font-size: 14px;
+  font-size: 20px;
   color: rgba(255, 255, 255, 0);
   padding: 1em;
   -webkit-transition: all 0.2s ease;
@@ -60,7 +60,8 @@ html {
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: lighter;
 }
 
 .gallery {
@@ -69,6 +70,9 @@ body {
           column-gap: 0;
 }
 @media (min-width: 480px) {
+  html:not(.touch) .gallery-image figcaption, .touch .gallery-image figcaption, .mfp-with-zoom .mfp-title {
+    font-size: 200%;
+  }
   .gallery {
     -webkit-column-count: 2;
        -moz-column-count: 2;

@@ -2,7 +2,7 @@ body {
     background-color: whitesmoke;
     text-align:center;
     margin:auto;
-    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     width:100%;
     align-items: center;
     justify-content: center;
@@ -135,12 +135,12 @@ h6::first-line {
 }
 
 h1 {
-    font-size: 250%;
+    font-size: 350%;
     color:#254636;
 }
 
 h2 {
-    font-size: 200%;
+    font-size: 250%;
 }
 
 h3 {
