@@ -221,14 +221,6 @@ tr:last-child td::after {
     display: none;
 }
 
-.sponsorStripe {
-    width: 100%;
-    display:flex;
-    justify-content: space-between;
-    margin-top:5vw;
-    margin-bottom:5vw;
-}
-
 footer {
     background-color:darkgray;
     color: black;
