@@ -49,7 +49,7 @@ body {
   max-width: 1900px;
   margin: 35px 0px;
   background-color: whitesmoke;
-  background-image: radial-gradient(rgba(124, 252, 0, 0.4) 1px, whitesmoke 1px);
+  
   background-size: 40px 40px;
   outline-offset: 20px;
   overflow-x: auto;
@@ -60,7 +60,7 @@ body {
   /* firefox scrollbar */
   scrollbar-color: #00B977 #222;
   scrollbar-width: auto;
-  animation: background 300s linear infinite;
+  /* animation: background 300s linear infinite; */
 }
 
 @keyframes background {
@@ -153,32 +153,32 @@ body {
 #mz-gallery figure div:nth-child(3) {
   top: 0;
   left: 0;
-  border-left: 1px dotted lawngreen;
-  border-top: 1px solid lawngreen;
+  border-left: 1px solid #00B977;
+  border-top: 1px solid #00B977;
   border-radius: 15px 0px 0px 0px;
 }
 
 #mz-gallery figure div:nth-child(4) {
   top: 0;
   right: 0;
-  border-top: 1px solid white;
-  border-right: 1px solid white;
+  border-top: 1px solid #00B977;
+  border-right: 1px solid #00B977;
   border-radius: 0px 15px 0px 0px;
 }
 
 #mz-gallery figure div:nth-child(5) {
   bottom: 0;
   right: 0;
-  border-right: 1px dotted lawngreen;
-  border-bottom: 1px solid lawngreen;
+  border-right: 1px solid #00B977;
+  border-bottom: 1px solid #00B977;
   border-radius: 0px 0px 15px 0px;
 }
 
 #mz-gallery figure div:nth-child(6) {
   bottom: 0;
   left: 0;
-  border-bottom: 1px solid white;
-  border-left: 1px solid white;
+  border-bottom: 1px solid #00B977;
+  border-left: 1px solid #00B977;
   border-radius: 0px 0px 0px 15px;
 }
 
@@ -210,8 +210,8 @@ body {
   align-items: center;
   justify-content: center;
   background: radial-gradient(
-    rgba(124, 252, 0, 0.7) 1px,
-    rgba(0, 0, 0, 0.9) 1px
+    rgba(124, 252, 0, 0.7) 0px,
+    rgba(0, 0, 0, 0.9) 0px
   );
   outline: 2px dotted transparent;
   outline-offset: 0px;
@@ -219,7 +219,6 @@ body {
   opacity: 0;
   border-radius: 100%;
   pointer-events: none;
-  animation: background 100s linear infinite;
   transition: all 0.3s ease-in-out;
 }
 
@@ -227,7 +226,6 @@ body {
   height: calc(100% - 40px);
   filter: brightness(1.5);
   border-radius: 10px;
-  outline: 1px solid rgba(255, 255, 255, 0.8);
   outline-offset: 5px;
   transition: all 0.3s ease-in-out;
 }
