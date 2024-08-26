@@ -10,7 +10,6 @@ function adjustMap() {
 }
 
 function setAdditionalHeight() {
-    console.log("jest");
     if (window.innerWidth > 1000) {
         return 0.1 * window.innerWidth;
     }
@@ -24,12 +23,12 @@ function adjustSponsors() {
 
     if (stripes) {
         const additionalHeight = setAdditionalHeight();
-        console.log(additionalHeight)
         stripes.forEach((stripe, index) => {
             const iframeDocument = stripe.contentDocument || stripe.contentWindow.document;
-            stripe.style.height = iframeDocument.body.scrollHeight + additionalHeight + 'px';
+            if (iframeDocument) {
+                stripe.style.height = iframeDocument.body.scrollHeight + additionalHeight + 'px';
+            }
         });
-        console.log("haha");
     }
 }
 
