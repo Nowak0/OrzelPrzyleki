@@ -24,9 +24,16 @@ function adjustSponsors() {
     if (stripes) {
         const additionalHeight = setAdditionalHeight();
         stripes.forEach((stripe, index) => {
-            const iframeDocument = stripe.contentDocument || stripe.contentWindow.document;
-            if (iframeDocument) {
-                stripe.style.height = iframeDocument.body.scrollHeight + additionalHeight + 'px';
+            try {
+                const iframeDocument = stripe.contentDocument || stripe.contentWindow.document;
+                if (iframeDocument) {
+                    stripe.style.height = iframeDocument.body.scrollHeight + additionalHeight + 'px';
+                }
+            } catch (error) {
+                console.error('Error accessing iframe content:', error);
+            }
+            if (stripe.complete) {
+                stripe.dispatchEvent(new Event('load'));
             }
         });
     }
