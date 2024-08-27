@@ -14,29 +14,13 @@ window.onscroll = function() {
     });
 }
 
-
-function scrollFunction() {
-    let goToTop = document.querySelectorAll('.goToTop');
-    goToTop.forEach((button) => {
-        if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-            button.style.display = 'block';
-        }
-        else {
-            if(goToTop) {
-                button.style.display = 'none';
-            }
-        }
-    });
-}
-
-
-$(document).ready(function(){
-    $("a").on('click', function() {
-        if(this.hash!=='') {
-            $('html, body').animate({
-                scrollTop: 0
-            }, 0);
-        }
-    });
-  });
+// $(document).ready(function(){
+//     $("a").on('click', function() {
+//         if(this.hash!=='') {
+//             $('html, body').animate({
+//                 scrollTop: 0
+//             }, 0);
+//         }
+//     });
+//   });
 
