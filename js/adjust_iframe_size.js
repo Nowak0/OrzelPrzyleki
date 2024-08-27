@@ -26,14 +26,9 @@ function adjustSponsors() {
         stripes.forEach((stripe, index) => {
             try {
                 const iframeDocument = stripe.contentWindow.document;
-                if (iframeDocument) {
-                    stripe.style.height = iframeDocument.body.scrollHeight + additionalHeight + 'px';
-                }
+                stripe.style.height = iframeDocument.body.scrollHeight + additionalHeight + 'px';
             } catch (error) {
-                console.error('Error accessing iframe content:', error);
-            }
-            if (stripe.complete) {
-                stripe.dispatchEvent(new Event('load'));
+                console.error('Error accessing content:', error);
             }
         });
     }
