@@ -25,7 +25,7 @@ function adjustSponsors() {
         const additionalHeight = setAdditionalHeight();
         stripes.forEach((stripe, index) => {
             try {
-                const iframeDocument = stripe.contentDocument || stripe.contentWindow.document;
+                const iframeDocument = stripe.contentDocument;
                 if (iframeDocument) {
                     stripe.style.height = iframeDocument.body.scrollHeight + additionalHeight + 'px';
                 }
