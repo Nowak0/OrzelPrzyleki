@@ -117,6 +117,12 @@ article {
     width: 100%;
 }
 
+.subPageArticle {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .halfArticle {
     width: 50%;
     text-align: left;
@@ -124,7 +130,7 @@ article {
 }
 
 article, .halfArticle, .fullArticle {
-    padding: 30px;
+    padding: 0px 30px 30px 30px;
     font-size: 120%;
 }
 
