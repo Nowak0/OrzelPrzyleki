@@ -11,7 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href='https://fonts.googleapis.com/css?family=Barlow Condensed' rel='stylesheet'>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/mobileResponsiveMenu.js"></script>
   </head>
   <body>
     <header>
@@ -20,7 +22,7 @@
           <img src="pics/svg_czysty_orzel_logo.svg" alt="logo Orzeł Przyłęki"/>
         </a>
       </div>
-      <nav>
+      <nav class="topnav">
         <ul>
           <li>
             <div class="subnav">
@@ -56,6 +58,13 @@
                 <a href="contact.html">Napisz do nas</a>
                 <a href="https://www.facebook.com/OrzelPrzyleki" target="_blank">Nasz Facebook</a>
               </div>
+            </div>
+          </li>
+          <li>
+            <div class="subnav">
+              <a href="javascript:void(0);" class="subnavHeader icon" onclick="mobileResponsiveMenu()">
+                <i class="fa fa-bars"></i>
+              </a>
             </div>
           </li>
         </ul>

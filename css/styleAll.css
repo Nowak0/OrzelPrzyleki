@@ -234,6 +234,9 @@ footer {
 footer p {
     margin:0;
 }
+.topnav .icon {
+    display: none;
+}
 
 @keyframes fade {
     from {
@@ -260,11 +263,15 @@ footer p {
     body,nav a, .subnavHeader, .subnavContent {
         font-size: 11px;
     }
-
-    nav li {
+    
+    .topnav .icon {
         display: block;
     }
 
+    nav ul li:not(:last-child) {
+        display: none;
+    }
+    
     .logo img{
         width: 90px;
         height:70px;
@@ -283,7 +290,20 @@ footer p {
     button {
         padding: 2vw 2.8vw;
     }
+    
+    .topnav.mobileResponsiveMenu {
+        position: relative;
+    }
+
+    .topnav.mobileResponsiveMenu li {
+        float: none;
+        display: block;
+    }
 }
+
+@media screen and (max-width: 600px) {
+    
+  }
 
 @media (max-width: 480px) {
     .sponsorStripe {

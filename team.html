@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href='https://fonts.googleapis.com/css?family=Barlow Condensed' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/mobileResponsiveMenu.js"></script>
   </head>
   <body>
     <header>
@@ -18,7 +20,7 @@
           <img src="pics/svg_czysty_orzel_logo.svg" alt="logo Orzeł Przyłęki"/>
         </a>
       </div>
-      <nav>
+      <nav class="topnav">
         <ul>
           <li>
             <div class="subnav">
@@ -42,7 +44,7 @@
             <div class="subnav">
               <a class="subnavHeader">WSPARCIE &#x2335;</a>
               <div class="subnavContent">
-                  <a href="sponsors.html">Sponsorzy</a>
+                <a href="sponsors.html">Sponsorzy</a>
                 <a href="biale_blota.html">Gmina Białe Błota</a>
               </div>
             </div>
@@ -54,6 +56,13 @@
                 <a href="contact.html">Napisz do nas</a>
                 <a href="https://www.facebook.com/OrzelPrzyleki" target="_blank">Nasz Facebook</a>
               </div>
+            </div>
+          </li>
+          <li>
+            <div class="subnav">
+              <a href="javascript:void(0);" class="subnavHeader icon" onclick="mobileResponsiveMenu()">
+                <i class="fa fa-bars"></i>
+              </a>
             </div>
           </li>
         </ul>
