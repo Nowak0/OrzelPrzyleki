@@ -70,14 +70,13 @@ function changeSlider() {
 
 function sliderButtonAction() {
     if (countClicksSlider == 1) {
-        const standings = document.getElementById("standings");
-        window.location.href="#" + standings.id;
+        window.location.href="team.html";
     }
     if (countClicksSlider == 2) {
-        window.location.href="";
+        window.location.href="academy.html";
     }
-    if (countClicksSlider == 3) {
-        window.location.href="";
+    if (countClicksSlider == 3 || countClicksSlider == 0) {
+        window.location.href="contact.html";
     }
 }
 
