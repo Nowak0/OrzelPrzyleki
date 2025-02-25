@@ -48,7 +48,7 @@ function changeSlider() {
         image.setAttribute('alt', 'zdjecie naglowkowe 1');
         smallText.innerHTML = "Drużyna seniorów";
         bigText.innerHTML="Zawsze walczymy do końca!<br> Dołącz do nas!";
-        button.innerHTML = "terminarz";
+        button.innerHTML = "drużyna seniorów";
     }
     if (countClicksSlider == 2) {
         image.setAttribute('src', 'pics/juniorzySlider.jpg');

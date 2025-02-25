@@ -130,6 +130,10 @@ nav a:hover, .subnav:hover .subnavHeader{
     display: block;
 }
 
+.topnav .icon {
+    display: none;
+}
+
 h6::first-line {
     color:#5b56a3;
 }
@@ -234,9 +238,6 @@ footer {
 footer p {
     margin:0;
 }
-.topnav .icon {
-    display: none;
-}
 
 @keyframes fade {
     from {
@@ -300,10 +301,6 @@ footer p {
         display: block;
     }
 }
-
-@media screen and (max-width: 600px) {
-    
-  }
 
 @media (max-width: 480px) {
     .sponsorStripe {
