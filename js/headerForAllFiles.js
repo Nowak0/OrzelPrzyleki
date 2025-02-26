@@ -20,14 +20,14 @@ function createHeader() {
         title: 'SENIORZY &#x2335;',
         links: [
           { text: 'Drużyna', href: 'team.html' },
-          { text: 'Galeria', href: 'galleryTemplate.html', target: '_blank' }
+          { text: 'Galeria', href: 'galleryAcademy.html'}
         ]
       },
       {
         title: 'AKADEMIA &#x2335;',
         links: [
           { text: 'Orlęta', href: 'academy.html' },
-          { text: 'Galeria', href: 'galleryAcademy.html', target: '_blank' }
+          { text: 'Galeria', href: 'galleryAcademy.html'}
         ]
       },
       {
