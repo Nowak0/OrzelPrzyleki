@@ -48,7 +48,7 @@ function changeSlider() {
         image.setAttribute('alt', 'zdjecie naglowkowe 1');
         smallText.innerHTML = "Drużyna seniorów";
         bigText.innerHTML="Zawsze walczymy do końca!<br> Dołącz do nas!";
-        button.innerHTML = "terminarz";
+        button.innerHTML = "drużyna seniorów";
     }
     if (countClicksSlider == 2) {
         image.setAttribute('src', 'pics/juniorzySlider.jpg');
@@ -70,14 +70,13 @@ function changeSlider() {
 
 function sliderButtonAction() {
     if (countClicksSlider == 1) {
-        const standings = document.getElementById("standings");
-        window.location.href="#" + standings.id;
+        window.location.href="team.html";
     }
     if (countClicksSlider == 2) {
-        window.location.href="";
+        window.location.href="academy.html";
     }
-    if (countClicksSlider == 3) {
-        window.location.href="";
+    if (countClicksSlider == 3 || countClicksSlider == 0) {
+        window.location.href="contact.html";
     }
 }
 

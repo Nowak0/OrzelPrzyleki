@@ -11,63 +11,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href='https://fonts.googleapis.com/css?family=Barlow Condensed' rel='stylesheet'>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/mobileResponsiveMenu.js"></script>
+    <script src="js/scrollTop.js" defer></script>
+    <script src="js/slider.js" defer></script>
+    <script src="js/adjust_iframe_size.js" defer></script>
+    <script src="js/headerForAllFiles.js"></script>
   </head>
   <body>
-    <header>
-      <div class="logo">
-        <a href="index.html">
-          <img src="pics/svg_czysty_orzel_logo.svg" alt="logo Orzeł Przyłęki"/>
-        </a>
-      </div>
-      <nav>
-        <ul>
-          <li>
-            <div class="subnav">
-              <a class="subnavHeader">SENIORZY &#x2335;</a>
-              <div class="subnavContent">
-                <a href="team.html">Drużyna</a>
-                <a href="galleryTemplate.html" target="_blank">Galeria</a>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="subnav">
-              <a class="subnavHeader">AKADEMIA &#x2335;</a>
-              <div class="subnavContent">
-                <a href="academy.html">Orlęta</a>
-                <a href="galleryTemplate.html" target="_blank">Galeria</a>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="subnav">
-              <a class="subnavHeader">WSPARCIE &#x2335;</a>
-              <div class="subnavContent">
-                <a href="sponsors.html">Sponsorzy</a>
-                <a href="biale_blota.html">Gmina Białe Błota</a>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="subnav">
-              <a class="subnavHeader">KONTAKT &#x2335;</a>
-              <div class="subnavContent">
-                <a href="contact.html">Napisz do nas</a>
-                <a href="https://www.facebook.com/OrzelPrzyleki" target="_blank">Nasz Facebook</a>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </nav>
-    </header>
     <div class="container">
       <div class="slider">
         <img src="pics/rozgrzewkaSlider.jpeg" alt="zdjecie naglowkowe 1" class="sliderImg" id="sliderImg">
         <div class="sliderItems" id="sliderItems">
           <p id="smallSliderText">Drużyna Seniorów</p>
           <p id="bigSliderText">Zawsze walczymy do końca!<br> Dołącz do nas</p>
-          <button id="sliderButton" onclick=sliderButtonAction()>terminarz</button>
+          <button id="sliderButton" onclick=sliderButtonAction()>Drużyna seniorów</button>
         </div>
         <button id="goLeft">&larr;</button>
         <button id="goRight">&rarr;</button>
@@ -83,8 +42,8 @@
           Rozwijamy struktury naszego małego klubu. Od 2022 szkolimy najmłodszych adeptów piłkarskiego rzemiosła. To dopiero początek!
           </p>
           <p>Zapraszamy na stadion przy ulicy Zabytkowej 8 w Przyłękach i do śledzenia naszego <a href="https://www.facebook.com/OrzelPrzyleki" target="_blank">Facebooka</a>.</p>
-          <a href="team.html"><button>Drużyna</button></a>
-          <a href="galleryTemplate.html" target="_blank"><button>Galeria</button></a>
+          <a href="team.html"><button>nasza drużyna</button></a>
+          <a href="biale_blota.html"><button>gmina białe błota</button></a>
         </div>
         <div class="halfAside">
           <img src="pics/objecia_po_meczu.jpeg" alt="zawodnicy podczas rozgrzewki">
@@ -140,9 +99,5 @@
           <p>Copyright &copy; 2024</p>
         </footer>
     </div>
-    <script src="js/scrollTop.js" defer></script>
-    <script src="js/slider.js" defer></script>
-    <script src="js/adjust_iframe_size.js" defer></script>
-
   </body>
 </html>

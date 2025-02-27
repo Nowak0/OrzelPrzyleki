@@ -130,6 +130,10 @@ nav a:hover, .subnav:hover .subnavHeader{
     display: block;
 }
 
+.topnav .icon {
+    display: none;
+}
+
 h6::first-line {
     color:#5b56a3;
 }
@@ -260,11 +264,15 @@ footer p {
     body,nav a, .subnavHeader, .subnavContent {
         font-size: 11px;
     }
-
-    nav li {
+    
+    .topnav .icon {
         display: block;
     }
 
+    nav ul li:not(:last-child) {
+        display: none;
+    }
+    
     .logo img{
         width: 90px;
         height:70px;
@@ -282,6 +290,15 @@ footer p {
 
     button {
         padding: 2vw 2.8vw;
+    }
+    
+    .topnav.mobileResponsiveMenu {
+        position: relative;
+    }
+
+    .topnav.mobileResponsiveMenu li {
+        float: none;
+        display: block;
     }
 }
 
