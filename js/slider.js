@@ -46,9 +46,9 @@ function changeSlider() {
     if (countClicksSlider == 1) {
         image.setAttribute('src', 'pics/player-ball.webp');
         image.setAttribute('alt', 'Drużyna seniorów Orzeł Przyłęki');
-        smallText.innerHTML = "Drużyna seniorów";
-        bigText.innerHTML="Nabór całoroczny<br> Dołącz do nas!";
-        button.innerHTML = "drużyna seniorów";
+        smallText.innerHTML = "Orzeł Przyłęki Seniorzy";
+        bigText.innerHTML="Dołącz do nas!";
+        button.innerHTML = "Drużyna seniorów";
     }
     if (countClicksSlider == 2) {
         image.setAttribute('src', 'pics/academy.webp');
