@@ -19,8 +19,7 @@ function createHeader() {
       {
         title: 'SENIORZY &#x2335;',
         links: [
-          { text: 'Drużyna', href: 'team.html' },
-          { text: 'Galeria', href: 'galleryAcademy.html'}
+          { text: 'Drużyna', href: 'team.html' }
         ]
       },
       {
