@@ -44,22 +44,22 @@ function changeSlider() {
     clearTimeout(timeout);
     resetAnimation();
     if (countClicksSlider == 1) {
-        image.setAttribute('src', 'pics/rozgrzewkaSlider.jpeg');
-        image.setAttribute('alt', 'zdjecie naglowkowe 1');
+        image.setAttribute('src', 'pics/player-ball.webp');
+        image.setAttribute('alt', 'Drużyna seniorów Orzeł Przyłęki');
         smallText.innerHTML = "Drużyna seniorów";
-        bigText.innerHTML="Zawsze walczymy do końca!<br> Dołącz do nas!";
+        bigText.innerHTML="Nabór całoroczny<br> Dołącz do nas!";
         button.innerHTML = "drużyna seniorów";
     }
     if (countClicksSlider == 2) {
-        image.setAttribute('src', 'pics/juniorzySlider.jpg');
-        image.setAttribute('alt', 'zdjecie naglowkowe 2');
+        image.setAttribute('src', 'pics/academy.webp');
+        image.setAttribute('alt', 'Orzeł Przyłęki Academy - szkolenie młodzieży');
         smallText.innerHTML = "Orzeł Academy";
         bigText.innerHTML="Szkolimy małe Orlęta";
         button.innerHTML = "dowiedz się więcej";
     }
     if (countClicksSlider == 3) {
-        image.setAttribute('src','pics/wsparcie_slider.jpg');
-        image.setAttribute('alt','zdjecie naglowkowe 3');
+        image.setAttribute('src','pics/wspolpraca.webp');
+        image.setAttribute('alt','Orzeł Przyłęki współpraca kontakt');
         smallText.innerHTML = "Współpraca";
         bigText.innerHTML="Skontaktuj się z nami";
         button.innerHTML = "dowiedz się więcej";
