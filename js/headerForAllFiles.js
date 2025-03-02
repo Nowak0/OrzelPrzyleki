@@ -14,6 +14,18 @@ function createHeader() {
     const nav = document.createElement('nav');
     nav.classList.add('topnav');
     const ul = document.createElement('ul');
+
+    const mobileLi = document.createElement('li');
+    const mobileSubnav = document.createElement('div');
+    mobileSubnav.classList.add('subnav');
+    const mobileIcon = document.createElement('a');
+    mobileIcon.href = 'javascript:void(0);';
+    mobileIcon.classList.add('subnavHeader', 'icon');
+    mobileIcon.innerHTML = '<i class="fa fa-bars"></i>';
+    mobileIcon.onclick = function () { mobileResponsiveMenu(); };
+    mobileSubnav.appendChild(mobileIcon);
+    mobileLi.appendChild(mobileSubnav);
+    ul.appendChild(mobileLi);
   
     const navItems = [
       {
@@ -69,17 +81,7 @@ function createHeader() {
       ul.appendChild(li);
     });
 
-    const mobileLi = document.createElement('li');
-    const mobileSubnav = document.createElement('div');
-    mobileSubnav.classList.add('subnav');
-    const mobileIcon = document.createElement('a');
-    mobileIcon.href = 'javascript:void(0);';
-    mobileIcon.classList.add('subnavHeader', 'icon');
-    mobileIcon.innerHTML = '<i class="fa fa-bars"></i>';
-    mobileIcon.onclick = function () { mobileResponsiveMenu(); };
-    mobileSubnav.appendChild(mobileIcon);
-    mobileLi.appendChild(mobileSubnav);
-    ul.appendChild(mobileLi);
+    
 
     nav.appendChild(ul);
     header.appendChild(logoContainer);

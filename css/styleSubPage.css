@@ -219,6 +219,7 @@ aside {
 @media (max-width: 700px) {
     .main {
         flex-direction: column;
+        margin-bottom:50px;
     }
 
     .line-box {
@@ -227,12 +228,35 @@ aside {
         margin-bottom: 20px;
     }
 
+    .slider {
+        margin-bottom: 20px;
+    }
+
+    #goLeft, #goRight {
+        font-size:200%;
+        padding:7px
+    }
+
+    #sliderButton {
+        margin-top:10px;
+        font-size:30%;
+        padding:7px;
+    }
+
     article, aside, .halfAside, .halfArticle, .fullArticle{
         margin: 0;
         padding:0;
         width: 100%;
         padding-top: 10px;
         text-align: center;
+    }
+
+    .halfAside {
+        order: 2;
+    }
+
+    .halfArticle {
+        order:1;
     }
 
     article p, aside p, .halfAside p, .halfArticle p, .fullArticle p {
@@ -248,7 +272,7 @@ aside {
         text-align: center;
     }  
 
-    article img, .halfArticle img, .fullArticle img {
+    article img, .halfArticle img{
         display: block;
         width: 100%;
         margin: 30px auto;
@@ -258,18 +282,35 @@ aside {
         border: 0;
     }
 
+    .widget p {
+        text-align: center;
+        font-size:120%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
     .goToTop {
         padding: 1.5vw;
-        font-size: 200%;
     }
 }
 
 @media (max-width: 480px) {
     .main {
-        margin-top: 50px;
+        margin-top:20px;
     }
-    .slider {
-        display: none;
+
+    #smallSliderText {
+        top:-3vw;
+        font-size:50%;
+    }
+
+    #bigSliderText {
+        font-size:100%;
+    }
+
+    #goLeft, #goRight {
+        font-size:150%;
+        padding:4px
     }
 
     .articleContent {

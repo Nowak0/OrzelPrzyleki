@@ -221,7 +221,7 @@ tr td::first-line {
     font-weight: bold;
 }
 
-tr:last-child td::after {
+tr:first-child td::after {
     display: none;
 }
 
@@ -269,7 +269,7 @@ footer p {
         display: block;
     }
 
-    nav ul li:not(:last-child) {
+    nav ul li:not(:first-child) {
         display: none;
     }
     
