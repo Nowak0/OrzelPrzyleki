@@ -116,6 +116,7 @@ article {
 
 .fullArticle {
     width: 100%;
+    text-align: center;
 }
 
 .halfArticle {
@@ -232,6 +233,10 @@ aside {
         margin-bottom: 20px;
     }
 
+    .sliderItems p {
+        margin-top:35px;
+    }
+
     #goLeft, #goRight {
         font-size:200%;
         padding:7px
@@ -296,6 +301,10 @@ aside {
 
 @media (max-width: 480px) {
     .main {
+        margin-top:20px;
+    }
+
+    .sliderItems p {
         margin-top:20px;
     }
 
